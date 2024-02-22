@@ -45,10 +45,10 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "/assets/favicon/favicon.svg"
-    favicon16x16: "/assets/img/newlogo.png"
-    favicon32x32: "/assets/img/newlogo.png"
-    # apple_touch_icon: "<link / abs url>"
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
     # safari_pinned_tab: "<link / abs url>"
   label:
     text: "Mafyuh's Blog"
@@ -67,6 +67,10 @@ params:
         url: posts
       - name: Tags
         url: tags
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    linkFullImages: true # hide on single page
 
 menu:
   main:
@@ -74,10 +78,14 @@ menu:
       name: Guides
       url: /guides/
       weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
+    - identifier: archives
+      name: Archives
+      url: /archives/
       weight: 20
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 30
 
 markup:
   highlight:
