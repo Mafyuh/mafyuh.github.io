@@ -5,25 +5,25 @@
     <loc>https://mafyuh.github.io/</loc>
     <lastmod>2024-02-06T02:58:07+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/</loc>
+    <loc>https://mafyuh.github.io/posts/</loc>
     <lastmod>2024-02-06T02:58:07+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/resize-ubuntu-vm-disk/</loc>
+    <loc>https://mafyuh.github.io/posts/resize-ubuntu-vm-disk/</loc>
     <lastmod>2024-02-06T02:58:07+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/proton-mail-authentik-social-login-setup/</loc>
+    <loc>https://mafyuh.github.io/posts/proton-mail-authentik-social-login-setup/</loc>
     <lastmod>2023-11-12T16:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/how-to-automate-jellyfin-issue-handling/</loc>
+    <loc>https://mafyuh.github.io/posts/how-to-automate-jellyfin-issue-handling/</loc>
     <lastmod>2023-11-11T16:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/</loc>
+    <loc>https://mafyuh.github.io/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</loc>
     <lastmod>2023-10-29T16:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</loc>
+    <loc>https://mafyuh.github.io/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</loc>
     <lastmod>2023-10-29T16:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/how-to-authenticate-kasm-via-authentik/</loc>
+    <loc>https://mafyuh.github.io/posts/how-to-authenticate-kasm-via-authentik/</loc>
     <lastmod>2023-09-30T16:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.github.io/categories/</loc>
@@ -41,10 +41,14 @@
     <loc>https://mafyuh.github.io/categories/import-2023-09-08-0216/</loc>
     <lastmod>2023-08-26T00:13:40+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.github.io/post/software/</loc>
+    <loc>https://mafyuh.github.io/posts/software/</loc>
     <lastmod>2023-08-26T00:13:40+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.github.io/tags/</loc>
     <lastmod>2023-08-26T00:13:40+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.github.io/archives/</loc>
+  </url><url>
+    <loc>https://mafyuh.github.io/posts/search/</loc>
   </url>
 </urlset>
