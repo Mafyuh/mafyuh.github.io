@@ -1,4 +1,4 @@
-baseURL: "https://mafyuh.github.io/"
+baseURL: "https://mafyuh.com/"
 title: "Mafyuh's Blog"
 theme: "PaperMod"
 
@@ -14,7 +14,7 @@ params:
   title: "Mafyuh's Blog"
   description: "A blog by Mafyuh"
   keywords: ["Blog", "Portfolio", "PaperMod"]
-  author: "Mafyuh"
+  author: "Matt"
   DateFormat: "January 2, 2006"
   defaultTheme: auto
   disableThemeToggle: false
@@ -28,7 +28,7 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
   showtoc: true
@@ -64,16 +64,16 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Mafyuh
-    subtitle: "Selfhoster"
+    subtitle: "Selfhoster - Junior Web Developer"
     imageUrl: "/assets/favicon/favicon.svg"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: my image
+    imageTitle: Mafyuh Logo
     buttons:
       - name: Posts
         url: posts
-      - name: Tags
-        url: tags
+      - name: contact
+        url: contact
   cover:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: false # hide on list pages and home

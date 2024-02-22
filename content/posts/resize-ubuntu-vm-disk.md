@@ -10,7 +10,7 @@ title = "Resize Ubuntu VM Disk in Proxmox"
 
 # 1st step: Increase/resize disk from GUI console
 
-![Proxmox webui change](/assets/img/prox-resize.png)
+![Proxmox webui change](/assets/img/prox-resize.png#center)
 
 # 2nd step: Extend physical drive partition and check free space with:
 
