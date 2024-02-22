@@ -55,7 +55,8 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Resize Ubuntu VM Disk in Proxmox" />
+</noscript><script defer data-domain="mafyuh.com" src="https://stats.mafyuh.io/js/script.js"></script>
+<meta property="og:title" content="Resize Ubuntu VM Disk in Proxmox" />
 <meta property="og:description" content="1st step: Increase/resize disk from GUI console 2nd step: Extend physical drive partition and check free space with: sudo growpart /dev/sda 3 sudo pvdisplay sudo pvresize /dev/sda3 sudo pvdisplay 3rd step: Extend Logical volume sudo lvdisplay sudo lvextend -l &#43;100%FREE /dev/ubuntu-vg/ubuntu-lv sudo lvdisplay 4th step: Resize Filesystem sudo resize2fs /dev/ubuntu-vg/ubuntu-lv sudo fdisk -l " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mafyuh.com/posts/resize-ubuntu-vm-disk/" /><meta property="article:section" content="posts" />

@@ -57,7 +57,8 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
         }
 
     </style>
-</noscript><meta property="og:title" content="How to authenticate Zammad via SAML with Nginx Proxy Manager" />
+</noscript><script defer data-domain="mafyuh.com" src="https://stats.mafyuh.io/js/script.js"></script>
+<meta property="og:title" content="How to authenticate Zammad via SAML with Nginx Proxy Manager" />
 <meta property="og:description" content="If you are getting error messages like:
 422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:
 location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues." />
