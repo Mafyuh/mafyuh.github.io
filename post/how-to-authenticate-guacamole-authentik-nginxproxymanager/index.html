@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -10,16 +10,16 @@
 <meta name="description" content="authentik&rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
 Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.">
 <meta name="author" content="Mafyuh">
-<link rel="canonical" href="http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/">
+<link rel="canonical" href="https://mafyuh.github.io/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.svg">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/img/newlogo.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/img/newlogo.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://mafyuh.github.io/assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mafyuh.github.io/assets/img/newlogo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mafyuh.github.io/assets/img/newlogo.png">
+<link rel="apple-touch-icon" href="https://mafyuh.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mafyuh.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/">
+<link rel="alternate" hreflang="en" href="https://mafyuh.github.io/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/">
 <noscript>
     <style>
         #theme-toggle,
@@ -60,7 +60,7 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
 <meta property="og:description" content="authentik&rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
 Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://mafyuh.github.io/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-10-29T16:20:00+00:00" />
 <meta property="article:modified_time" content="2023-10-29T16:20:00+00:00" /><meta property="og:site_name" content="Mafyuh&#39;s Blog" />
 
@@ -79,13 +79,13 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://localhost:1313/post/"
+      "item": "https://mafyuh.github.io/post/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager",
-      "item": "http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/"
+      "item": "https://mafyuh.github.io/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/"
     }
   ]
 }
@@ -111,14 +111,14 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/"
+    "@id": "https://mafyuh.github.io/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Mafyuh's Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/assets/favicon/favicon.svg"
+      "url": "https://mafyuh.github.io/assets/favicon/favicon.svg"
     }
   }
 }
@@ -140,8 +140,8 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Mafyuh&#39;s Blog (Alt + H)">
-                <img src="http://localhost:1313/assets/favicon/favicon.svg" alt="" aria-label="logo"
+            <a href="https://mafyuh.github.io/" accesskey="h" title="Mafyuh&#39;s Blog (Alt + H)">
+                <img src="https://mafyuh.github.io/assets/favicon/favicon.svg" alt="" aria-label="logo"
                     height="35">Mafyuh&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
@@ -170,12 +170,12 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/guides/" title="Guides">
+                <a href="https://mafyuh.github.io/guides/" title="Guides">
                     <span>Guides</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://mafyuh.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -186,7 +186,7 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://mafyuh.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://mafyuh.github.io/post/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager
     </h1>
@@ -236,12 +236,12 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/post/how-to-automate-jellyfin-issue-handling/">
+  <a class="prev" href="https://mafyuh.github.io/post/how-to-automate-jellyfin-issue-handling/">
     <span class="title">« Prev</span>
     <br>
     <span>How To Automate Jellyfin Issue Handling</span>
   </a>
-  <a class="next" href="http://localhost:1313/post/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/">
+  <a class="next" href="https://mafyuh.github.io/post/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/">
     <span class="title">Next »</span>
     <br>
     <span>How to authenticate Zammad via SAML with Nginx Proxy Manager</span>
@@ -253,7 +253,7 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">Mafyuh&#39;s Blog</a></span>
+    <span>&copy; 2024 <a href="https://mafyuh.github.io/">Mafyuh&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
