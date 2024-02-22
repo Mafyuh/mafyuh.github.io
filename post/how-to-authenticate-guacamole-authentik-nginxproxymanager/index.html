@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager | Mafyuh&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="authentik&rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
+Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.">
+<meta name="author" content="Mafyuh">
+<link rel="canonical" href="http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/img/newlogo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/img/newlogo.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager" />
+<meta property="og:description" content="authentik&rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
+Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-10-29T16:20:00+00:00" />
+<meta property="article:modified_time" content="2023-10-29T16:20:00+00:00" /><meta property="og:site_name" content="Mafyuh&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager"/>
+<meta name="twitter:description" content="authentik&rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
+Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager",
+      "item": "http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager",
+  "name": "How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager",
+  "description": "authentik\u0026rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.\nError 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.",
+  "keywords": [
+    
+  ],
+  "articleBody": "authentik’s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.\nError 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.\n22:03:59.418 [http-nio-8080-exec-2] INFO o.a.g.a.o.t.TokenValidationService - Rejected invalid OpenID token: JWT processing failed. Additional details: [[17] Unable to process JOSE object (cause: org.jose4j.lang.UnresolvableKeyException: Unable to find a suitable verification key for JWS w/ header {\"alg\":\"RS256\",\"kid\":\"xxx\",\"typ\":\"JWT\"} due to an unexpected exception (java.io.IOException: Non 200 status code (403 Forbidden) returned from https://example.com/application/o/guacamole/jwks/?exclude_x5) while obtaining or using keys from JWKS endpoint at https://example.com/application/o/guacamole/jwks/?exclude_x5): JsonWebSignature{\"alg\":\"RS256\",\"kid\":\"xxx\",\"typ\":\"JWT\"} I assumed it had something to do with my Nginx Proxy Manager and the way I was proxying Guacamole, I do have WebSocket support and block common exploits enabled, their docs give a nginx config that I added under advanced.\nlocation /guacamole/ { proxy_pass http://HOSTNAME:8080; proxy_buffering off; proxy_http_version 1.1; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection $http_connection; access_log off; } I messed around with settings individually for hours, reading their docs, tried oznu’s Guacamole image as well, this time with errors about the postgres version being incompatible. Figured it could be something with Cloudflare so turned down my HTTPS settings. Nada. Tried SAML, more errors. Finally found this github issue and thanks to Fma965 for finding the solution.\nGo to your Cloudflare Dashboard. Click on your domains summary and then on the left tab find Rules.\nUnder Page Rules - Create a New Page Rule, set the URL as your jwks URL from authentik’s provider summary. Under pick a setting, choose Browser Integrity Check and make sure its unchecked. Save.\nThis finally got me authenticated into my Guacamole instance via authentik. I spent way too much time on this integration. Anyways, hope this guide helps someone who may be in my shoes.\n",
+  "wordCount" : "344",
+  "inLanguage": "en",
+  "datePublished": "2023-10-29T16:20:00Z",
+  "dateModified": "2023-10-29T16:20:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Mafyuh"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/post/how-to-authenticate-guacamole-authentik-nginxproxymanager/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mafyuh's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/assets/favicon/favicon.svg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Mafyuh&#39;s Blog (Alt + H)">
+                <img src="http://localhost:1313/assets/favicon/favicon.svg" alt="" aria-label="logo"
+                    height="35">Mafyuh&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/guides/" title="Guides">
+                    <span>Guides</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager
+    </h1>
+    <div class="post-meta"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;344 words&nbsp;·&nbsp;Mafyuh
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#error-403-forbidden">Error 403 Forbidden</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>authentik&rsquo;s docs have a guide already for Guacamole. You can find that <a href="https://goauthentik.io/integrations/services/apache-guacamole/">here</a>. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.</p>
+<h2 id="error-403-forbidden">Error 403 Forbidden<a hidden class="anchor" aria-hidden="true" href="#error-403-forbidden">#</a></h2>
+<p>While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">22:03:59.418 <span class="o">[</span>http-nio-8080-exec-2<span class="o">]</span> INFO o.a.g.a.o.t.TokenValidationService - Rejected invalid OpenID token: JWT processing failed. Additional details: <span class="o">[[</span>17<span class="o">]</span> Unable to process JOSE object <span class="o">(</span>cause: org.jose4j.lang.UnresolvableKeyException: Unable to find a suitable verification key <span class="k">for</span> JWS w/ header <span class="o">{</span><span class="s2">&#34;alg&#34;</span>:<span class="s2">&#34;RS256&#34;</span>,<span class="s2">&#34;kid&#34;</span>:<span class="s2">&#34;xxx&#34;</span>,<span class="s2">&#34;typ&#34;</span>:<span class="s2">&#34;JWT&#34;</span><span class="o">}</span> due to an unexpected exception <span class="o">(</span>java.io.IOException: Non <span class="m">200</span> status code <span class="o">(</span><span class="m">403</span> Forbidden<span class="o">)</span> returned from https://example.com/application/o/guacamole/jwks/?exclude_x5<span class="o">)</span> <span class="k">while</span> obtaining or using keys from JWKS endpoint at https://example.com/application/o/guacamole/jwks/?exclude_x5<span class="o">)</span>: JsonWebSignature<span class="o">{</span><span class="s2">&#34;alg&#34;</span>:<span class="s2">&#34;RS256&#34;</span>,<span class="s2">&#34;kid&#34;</span>:<span class="s2">&#34;xxx&#34;</span>,<span class="s2">&#34;typ&#34;</span>:<span class="s2">&#34;JWT&#34;</span><span class="o">}</span>
+</span></span></code></pre></div><p>I assumed it had something to do with my Nginx Proxy Manager and the way I was proxying Guacamole, I do have WebSocket support and block common exploits enabled, their <a href="https://guacamole.apache.org/doc/gug/reverse-proxy.html">docs</a> give a nginx config that I added under advanced.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">location</span> <span class="s">/guacamole/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">proxy_pass</span> <span class="s">http://HOSTNAME:8080</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">proxy_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="nv">$http_connection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>I messed around with settings individually for hours, reading their docs, tried <a href="https://hub.docker.com/r/oznu/guacamole/">oznu&rsquo;s</a> Guacamole image as well, this time with errors about the postgres version being incompatible. Figured it could be something with Cloudflare so turned down my HTTPS settings. Nada. Tried SAML, more errors.  Finally found this <a href="https://github.com/goauthentik/authentik/issues/4082">github issue</a> and thanks to <a href="https://github.com/Fma965">Fma965</a> for finding the solution.</p>
+<p>Go to your Cloudflare Dashboard. Click on your domains summary and then on the left tab find <strong>Rules</strong>.</p>
+<p>Under <strong>Page Rules - Create a New Page Rule</strong>, set the URL as your jwks URL from authentik&rsquo;s provider summary. Under pick a setting, choose Browser Integrity Check and make sure its unchecked. Save.</p>
+<p><img loading="lazy" src="/assets/img/pagerules.png" alt="Page Rules Images"  />
+</p>
+<p>This finally got me authenticated into my Guacamole instance via authentik. I spent way too much time on this integration. Anyways, hope this guide helps someone who may be in my shoes.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/post/how-to-automate-jellyfin-issue-handling/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>How To Automate Jellyfin Issue Handling</span>
+  </a>
+  <a class="next" href="http://localhost:1313/post/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/">
+    <span class="title">Next »</span>
+    <br>
+    <span>How to authenticate Zammad via SAML with Nginx Proxy Manager</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">Mafyuh&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
