@@ -1,0 +1,18 @@
+# Hugo default output directory
+/public
+public.zip
+/resources/_gen/
+/.hugo_build.lock
+
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OSX
+.DS_Store
+
+# Vagrant
+.vagrant/
