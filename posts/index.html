@@ -8,7 +8,7 @@
 <title>Posts | Mafyuh&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Posts - Mafyuh&#39;s Blog">
-<meta name="author" content="Mafyuh">
+<meta name="author" content="Matt">
 <link rel="canonical" href="https://mafyuh.com/posts/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://mafyuh.com/assets/favicon/favicon.ico">
@@ -167,7 +167,7 @@
   <div class="entry-content">
     <p>1st step: Increase/resize disk from GUI console 2nd step: Extend physical drive partition and check free space with: sudo growpart /dev/sda 3 sudo pvdisplay sudo pvresize /dev/sda3 sudo pvdisplay 3rd step: Extend Logical volume sudo lvdisplay sudo lvextend -l &#43;100%FREE /dev/ubuntu-vg/ubuntu-lv sudo lvdisplay 4th step: Resize Filesystem sudo resize2fs /dev/ubuntu-vg/ubuntu-lv sudo fdisk -l </p>
   </div>
-  <footer class="entry-footer"><span title='2024-02-06 02:58:07 +0000 UTC'>February 6, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;53 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2024-02-06 02:58:07 +0000 UTC'>February 6, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;53 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to Resize Ubuntu VM Disk in Proxmox" href="https://mafyuh.com/posts/resize-ubuntu-vm-disk/"></a>
 </article>
 
@@ -181,7 +181,7 @@
 To accomplish this, first create a SimpleLogin acct by logging in with Proton. Once thats done go to https://app.simplelogin.io/developer and create a website. Give it your authentik URL.
 Then go to Oauth Settings and copy your client ID and secret for next step. add your authentik URL in redirect URL like this https://auth....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-11-12 16:20:00 +0000 UTC'>November 12, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;227 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2023-11-12 16:20:00 +0000 UTC'>November 12, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;227 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to Proton Mail - SimpleLogin authentik Social Login Setup" href="https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/"></a>
 </article>
 
@@ -196,7 +196,7 @@ Requirements My only requirements when making this was that it was free and self
 Sonarr Radarr Overseerr/Jellyseerr Optional
 SMTP server or ability to send SMTP messages (can also use discord) ActivePieces or any other automation platform that supports TS....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-11-11 16:20:00 +0000 UTC'>November 11, 2023</span>&nbsp;·&nbsp;19 min&nbsp;·&nbsp;3952 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2023-11-11 16:20:00 +0000 UTC'>November 11, 2023</span>&nbsp;·&nbsp;19 min&nbsp;·&nbsp;3952 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to How To Automate Jellyfin Issue Handling" href="https://mafyuh.com/posts/how-to-automate-jellyfin-issue-handling/"></a>
 </article>
 
@@ -209,7 +209,7 @@ SMTP server or ability to send SMTP messages (can also use discord) ActivePieces
     <p>authentik’s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
 Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;344 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;344 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager" href="https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/"></a>
 </article>
 
@@ -223,7 +223,7 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
 422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:
 location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;107 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;107 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to How to authenticate Zammad via SAML with Nginx Proxy Manager" href="https://mafyuh.com/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/"></a>
 </article>
 
@@ -237,7 +237,7 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
 The official authentik docs dont have a Kasm Integration listed at the time. So I thought I would help out anyone who is trying to integrate these services via SAML. authentik’s SAML docs can be found here.
 Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authentication - SAML and create a new configuration....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-09-30 16:20:00 +0000 UTC'>September 30, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;393 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2023-09-30 16:20:00 +0000 UTC'>September 30, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;393 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to How To Authenticate KASM via authentik" href="https://mafyuh.com/posts/how-to-authenticate-kasm-via-authentik/"></a>
 </article>
 
@@ -252,7 +252,7 @@ Operating Systems
 Ubuntu 23.04 Ubuntu 22.04 (primary on most systems) CentOS/Fedora 38 (only when Ubuntu doesnt play nice) Debian 11 Proxmox 8 Windows 10/11 TrueNAS Scale (virtualized) CasaOS (zimaboard) pfSense Applications/Containers
 Nginx Proxy Manager Nginx Apache2 Traefik Authentik Portainer Yacht AdGuardHome Pihole Wazuh Zabbix Uptime Kuma Ghost (this blog) Wordpress Hydroxide (proton mail bridge) Calibre Smokeping Openspeedtest Grafana Prometheus InfluxDB PostgresSQL MySQL Watchtower Apache Guacamole Ansible Terraform Packer Vaultwarden Kasm Workspaces Jellyfin Plex Twingate Tailscale Headscale Wireguard LinkStack N8N Gotify Nextcloud Immich AI...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-08-26 00:13:40 +0000 UTC'>August 26, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;124 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer"><span title='2023-08-26 00:13:40 +0000 UTC'>August 26, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;124 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to Software" href="https://mafyuh.com/posts/software/"></a>
 </article>
 
@@ -264,7 +264,7 @@ Nginx Proxy Manager Nginx Apache2 Traefik Authentik Portainer Yacht AdGuardHome 
   <div class="entry-content">
     <p>archives</p>
   </div>
-  <footer class="entry-footer">0 min&nbsp;·&nbsp;0 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer">0 min&nbsp;·&nbsp;0 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to Archives" href="https://mafyuh.com/archives/"></a>
 </article>
 
@@ -276,7 +276,7 @@ Nginx Proxy Manager Nginx Apache2 Traefik Authentik Portainer Yacht AdGuardHome 
   <div class="entry-content">
     <p>search</p>
   </div>
-  <footer class="entry-footer">0 min&nbsp;·&nbsp;0 words&nbsp;·&nbsp;Mafyuh</footer>
+  <footer class="entry-footer">0 min&nbsp;·&nbsp;0 words&nbsp;·&nbsp;Matt</footer>
   <a class="entry-link" aria-label="post link to Search" href="https://mafyuh.com/search/"></a>
 </article>
     </main>

@@ -10,7 +10,7 @@
 <meta name="description" content="If you are getting error messages like:
 422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:
 location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues.">
-<meta name="author" content="Mafyuh">
+<meta name="author" content="Matt">
 <link rel="canonical" href="https://mafyuh.com/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://mafyuh.com/assets/favicon/favicon.ico">
@@ -110,7 +110,7 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
   "dateModified": "2023-10-29T16:20:00Z",
   "author":{
     "@type": "Person",
-    "name": "Mafyuh"
+    "name": "Matt"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -198,7 +198,7 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
     <h1 class="post-title entry-hint-parent">
       How to authenticate Zammad via SAML with Nginx Proxy Manager
     </h1>
-    <div class="post-meta"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;107 words&nbsp;·&nbsp;Mafyuh
+    <div class="post-meta"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;107 words&nbsp;·&nbsp;Matt
 
 </div>
   </header> 
@@ -238,7 +238,14 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
   </a>
 </nav>
 
-  </footer>
+  </footer><script src="https://utteranc.es/client.js"
+        repo="Mafyuh/mafyuh.com"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
 </article>
     </main>
     
