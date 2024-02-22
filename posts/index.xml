@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Mafyuh&#39;s Blog</title>
-    <link>https://mafyuh.github.io/posts/</link>
+    <link>https://mafyuh.com/posts/</link>
     <description>Recent content in Posts on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Feb 2024 02:58:07 +0000</lastBuildDate>
-    <atom:link href="https://mafyuh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mafyuh.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Resize Ubuntu VM Disk in Proxmox</title>
-      <link>https://mafyuh.github.io/posts/resize-ubuntu-vm-disk/</link>
+      <link>https://mafyuh.com/posts/resize-ubuntu-vm-disk/</link>
       <pubDate>Tue, 06 Feb 2024 02:58:07 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/resize-ubuntu-vm-disk/</guid>
+      <guid>https://mafyuh.com/posts/resize-ubuntu-vm-disk/</guid>
       <description>1st step: Increase/resize disk from GUI console 2nd step: Extend physical drive partition and check free space with: sudo growpart /dev/sda 3 sudo pvdisplay sudo pvresize /dev/sda3 sudo pvdisplay 3rd step: Extend Logical volume sudo lvdisplay sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv sudo lvdisplay 4th step: Resize Filesystem sudo resize2fs /dev/ubuntu-vg/ubuntu-lv sudo fdisk -l </description>
     </item>
     <item>
       <title>Proton Mail - SimpleLogin authentik Social Login Setup</title>
-      <link>https://mafyuh.github.io/posts/proton-mail-authentik-social-login-setup/</link>
+      <link>https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/</link>
       <pubDate>Sun, 12 Nov 2023 16:20:00 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/proton-mail-authentik-social-login-setup/</guid>
+      <guid>https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/</guid>
       <description>This is just a quick guide on how to authenticate your authentik users with Proton using SimpleLogin OIDC.
 To accomplish this, first create a SimpleLogin acct by logging in with Proton. Once thats done go to https://app.simplelogin.io/developer and create a website. Give it your authentik URL.
 Then go to Oauth Settings and copy your client ID and secret for next step. add your authentik URL in redirect URL like this https://auth.</description>
     </item>
     <item>
       <title>How To Automate Jellyfin Issue Handling</title>
-      <link>https://mafyuh.github.io/posts/how-to-automate-jellyfin-issue-handling/</link>
+      <link>https://mafyuh.com/posts/how-to-automate-jellyfin-issue-handling/</link>
       <pubDate>Sat, 11 Nov 2023 16:20:00 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/how-to-automate-jellyfin-issue-handling/</guid>
+      <guid>https://mafyuh.com/posts/how-to-automate-jellyfin-issue-handling/</guid>
       <description>I wanted a way to automate when users tell me a video on my Jellyfin server has an issue. After alot of trial and error, ChatGPT, Bard and I came up with this automation.
 Requirements My only requirements when making this was that it was free and self-hostable. Not even any NPM extensions are required in AP. Actual Software requirements are:
 Sonarr Radarr Overseerr/Jellyseerr Optional
@@ -36,35 +36,35 @@ SMTP server or ability to send SMTP messages (can also use discord) ActivePieces
     </item>
     <item>
       <title>How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager</title>
-      <link>https://mafyuh.github.io/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</link>
+      <link>https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</link>
       <pubDate>Sun, 29 Oct 2023 16:20:00 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</guid>
+      <guid>https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</guid>
       <description>authentik&amp;rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
 Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.</description>
     </item>
     <item>
       <title>How to authenticate Zammad via SAML with Nginx Proxy Manager</title>
-      <link>https://mafyuh.github.io/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</link>
+      <link>https://mafyuh.com/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</link>
       <pubDate>Sun, 29 Oct 2023 16:20:00 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</guid>
+      <guid>https://mafyuh.com/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</guid>
       <description>If you are getting error messages like:
 422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:
 location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues.</description>
     </item>
     <item>
       <title>How To Authenticate KASM via authentik</title>
-      <link>https://mafyuh.github.io/posts/how-to-authenticate-kasm-via-authentik/</link>
+      <link>https://mafyuh.com/posts/how-to-authenticate-kasm-via-authentik/</link>
       <pubDate>Sat, 30 Sep 2023 16:20:00 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/how-to-authenticate-kasm-via-authentik/</guid>
+      <guid>https://mafyuh.com/posts/how-to-authenticate-kasm-via-authentik/</guid>
       <description>You could do this with OpenID as well but this method is using SAML. This guide assumes you already have running instances of Kasm Workspaces and authentik.
 The official authentik docs dont have a Kasm Integration listed at the time. So I thought I would help out anyone who is trying to integrate these services via SAML. authentik&amp;rsquo;s SAML docs can be found here.
 Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authentication - SAML and create a new configuration.</description>
     </item>
     <item>
       <title>Software</title>
-      <link>https://mafyuh.github.io/posts/software/</link>
+      <link>https://mafyuh.com/posts/software/</link>
       <pubDate>Sat, 26 Aug 2023 00:13:40 +0000</pubDate>
-      <guid>https://mafyuh.github.io/posts/software/</guid>
+      <guid>https://mafyuh.com/posts/software/</guid>
       <description>Just a straight forward list of pretty much everything that makes up my homelab. Or systems I&amp;rsquo;ve ran in the past.
 Operating Systems
 Ubuntu 23.04 Ubuntu 22.04 (primary on most systems) CentOS/Fedora 38 (only when Ubuntu doesnt play nice) Debian 11 Proxmox 8 Windows 10/11 TrueNAS Scale (virtualized) CasaOS (zimaboard) pfSense Applications/Containers
