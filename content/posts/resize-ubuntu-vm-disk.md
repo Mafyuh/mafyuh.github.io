@@ -5,6 +5,7 @@ draft = false
 slug = "resize-ubuntu-vm-disk"
 title = "Resize Ubuntu VM Disk in Proxmox"
 tags = ["Ubuntu"]
+showToc = false
 +++
 
 

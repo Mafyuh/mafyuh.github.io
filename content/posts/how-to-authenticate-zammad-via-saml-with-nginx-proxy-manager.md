@@ -5,6 +5,7 @@ draft = false
 slug = "how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager"
 title = "How to authenticate Zammad via SAML with Nginx Proxy Manager"
 tags = ["authentik"]
+showToc = false
 +++
 
 

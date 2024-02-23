@@ -5,7 +5,7 @@ draft = false
 slug = "software"
 tags = ["Homelab"]
 title = "Software"
-
+showToc = false
 +++
 
 

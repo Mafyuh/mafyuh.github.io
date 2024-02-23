@@ -3,6 +3,7 @@ title: "Contact"
 date: 2024-02-22T08:00:00Z
 url: "/contact/"
 comments: false
+showToc: false
 ---
 
 Got questions, feedback, or just want to say hi? Feel free to reach out to me using the contact information below:

@@ -3,6 +3,7 @@ title: "About"
 date: 2024-02-22T08:00:00Z
 url: "/about/"
 comments: false
+showToc: false
 ---
 Hello! 👋 I'm Matt Reeves, a DevOps and GitOps enthusiast with a passion for self-hosting.
 

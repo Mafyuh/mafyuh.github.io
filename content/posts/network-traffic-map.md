@@ -5,6 +5,7 @@ draft = false
 slug = "network-traffic-map"
 title = "Network Traffic Map"
 tags = ["Homelab"]
+showToc = false
 +++
 
 This is just a visual representations of how my current setup flows.
