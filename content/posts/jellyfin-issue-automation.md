@@ -4,7 +4,7 @@ description = ""
 draft = false
 slug = "how-to-automate-jellyfin-issue-handling"
 title = "How To Automate Jellyfin Issue Handling"
-
+tags = ["Jellyfin"]
 +++
 
 I wanted a way to automate when users tell me a video on my Jellyfin server has an issue. After alot of trial and error, ChatGPT, Bard and I came up with this automation.

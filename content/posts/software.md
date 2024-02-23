@@ -1,10 +1,9 @@
 +++
-categories = ["Import 2023-08-26 04:06", "Import 2023-09-08 02:16"]
 date = 2023-08-26T00:13:40Z
 description = ""
 draft = false
 slug = "software"
-tags = ["Import 2023-08-26 04:06", "Import 2023-09-08 02:16"]
+tags = ["Homelab"]
 title = "Software"
 
 +++

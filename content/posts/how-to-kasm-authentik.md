@@ -4,7 +4,7 @@ description = ""
 draft = false
 slug = "how-to-authenticate-kasm-via-authentik"
 title = "How To Authenticate KASM via authentik"
-
+tags = ["authentik"]
 +++
 
 You could do this with OpenID as well but this method is using SAML. This guide assumes you already have running instances of Kasm Workspaces and authentik.

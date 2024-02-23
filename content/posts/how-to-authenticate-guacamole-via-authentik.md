@@ -4,7 +4,7 @@ description = ""
 draft = false
 slug = "how-to-authenticate-guacamole-authentik-nginxproxymanager"
 title = "How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager"
-
+tags = ["authentik"]
 +++
 
 authentik's docs have a guide already for Guacamole. You can find that [here](https://goauthentik.io/integrations/services/apache-guacamole/). Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.

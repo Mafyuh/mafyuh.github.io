@@ -70,9 +70,9 @@ params:
     imageHeight: 120
     imageTitle: Mafyuh Logo
     buttons:
-      - name: Posts
-        url: posts
-      - name: contact
+      - name: About
+        url: about
+      - name: Contact
         url: contact
   cover:
     hidden: false # hide everywhere but not in structured data
@@ -81,9 +81,9 @@ params:
 
 menu:
   main:
-    - identifier: categories
-      name: Guides
-      url: /guides/
+    - identifier: tags
+      name: Tags
+      url: /tags/
       weight: 10
     - identifier: archives
       name: Archives
@@ -91,7 +91,7 @@ menu:
       weight: 20
     - identifier: search
       name: Search
-      url: /search
+      url: /search/
       weight: 30
 
 markup:

@@ -4,7 +4,7 @@ description = ""
 draft = false
 slug = "proton-mail-authentik-social-login-setup"
 title = "Proton Mail - SimpleLogin authentik Social Login Setup"
-
+tags = ["authentik"]
 +++
 
 This is just a quick guide on how to authenticate your authentik users with Proton using SimpleLogin OIDC.
