@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Import 2023-09-08 02:16 on Mafyuh&#39;s Blog</title>
-    <link>https://mafyuh.com/tags/import-2023-09-08-0216/</link>
+    <link>http://localhost:1313/tags/import-2023-09-08-0216/</link>
     <description>Recent content in Import 2023-09-08 02:16 on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 26 Aug 2023 00:13:40 +0000</lastBuildDate>
-    <atom:link href="https://mafyuh.com/tags/import-2023-09-08-0216/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/import-2023-09-08-0216/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Software</title>
-      <link>https://mafyuh.com/posts/software/</link>
+      <link>http://localhost:1313/posts/software/</link>
       <pubDate>Sat, 26 Aug 2023 00:13:40 +0000</pubDate>
-      <guid>https://mafyuh.com/posts/software/</guid>
+      <guid>http://localhost:1313/posts/software/</guid>
       <description>Just a straight forward list of pretty much everything that makes up my homelab. Or systems I&amp;rsquo;ve ran in the past.
 Operating Systems
 Ubuntu 23.04 Ubuntu 22.04 (primary on most systems) CentOS/Fedora 38 (only when Ubuntu doesnt play nice) Debian 11 Proxmox 8 Windows 10/11 TrueNAS Scale (virtualized) CasaOS (zimaboard) pfSense Applications/Containers

@@ -6,8 +6,26 @@
     <description>Recent content on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Feb 2024 02:58:07 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Feb 2024 08:00:00 +0000</lastBuildDate>
     <atom:link href="https://mafyuh.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://mafyuh.com/about/</link>
+      <pubDate>Thu, 22 Feb 2024 08:00:00 +0000</pubDate>
+      <guid>https://mafyuh.com/about/</guid>
+      <description>Hello! 👋 I&amp;rsquo;m Matt Reeves, a DevOps and GitOps enthusiast with a passion for self-hosting.
+Before diving into the world of DevOps and GitOps, I honed my skills as an advanced electronics repair technician, tackling complex challenges with multimeters, oscilloscopes, and soldering irons. From troubleshooting intricate circuits to mastering surface-mount technology (SMT), I thrived on solving problems and learning what&amp;rsquo;s possible in electronics.
+While I continue to stay up-to-date with hardware, my focus has shifted more towards the software side of things.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://mafyuh.com/contact/</link>
+      <pubDate>Thu, 22 Feb 2024 08:00:00 +0000</pubDate>
+      <guid>https://mafyuh.com/contact/</guid>
+      <description>Got questions, feedback, or just want to say hi? Feel free to reach out to me using the contact information below:
+Email: admin[at]mafyuh[dot]com Discord Resume If you&amp;rsquo;re interested in my professional experience, you can download my resume below:
+Download Resume </description>
+    </item>
     <item>
       <title>Resize Ubuntu VM Disk in Proxmox</title>
       <link>https://mafyuh.com/posts/resize-ubuntu-vm-disk/</link>
@@ -61,6 +79,14 @@ The official authentik docs dont have a Kasm Integration listed at the time. So 
 Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authentication - SAML and create a new configuration.</description>
     </item>
     <item>
+      <title>Network Traffic Map</title>
+      <link>https://mafyuh.com/posts/network-traffic-map/</link>
+      <pubDate>Thu, 31 Aug 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/network-traffic-map/</guid>
+      <description>This is just a visual representations of how my current setup flows.
+I have some of the docker-compose files that make up this infra on my Gitea</description>
+    </item>
+    <item>
       <title>Software</title>
       <link>https://mafyuh.com/posts/software/</link>
       <pubDate>Sat, 26 Aug 2023 00:13:40 +0000</pubDate>
@@ -69,6 +95,14 @@ Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authenti
 Operating Systems
 Ubuntu 23.04 Ubuntu 22.04 (primary on most systems) CentOS/Fedora 38 (only when Ubuntu doesnt play nice) Debian 11 Proxmox 8 Windows 10/11 TrueNAS Scale (virtualized) CasaOS (zimaboard) pfSense Applications/Containers
 Nginx Proxy Manager Nginx Apache2 Traefik Authentik Portainer Yacht AdGuardHome Pihole Wazuh Zabbix Uptime Kuma Ghost (this blog) Wordpress Hydroxide (proton mail bridge) Calibre Smokeping Openspeedtest Grafana Prometheus InfluxDB PostgresSQL MySQL Watchtower Apache Guacamole Ansible Terraform Packer Vaultwarden Kasm Workspaces Jellyfin Plex Twingate Tailscale Headscale Wireguard LinkStack N8N Gotify Nextcloud Immich AI</description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>https://mafyuh.com/posts/hardware/</link>
+      <pubDate>Fri, 25 Aug 2023 00:13:40 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/hardware/</guid>
+      <description>Most of my infrastructure is hosted on my in-lab Proxmox server, along with a few new machines for dedicated services. Here are some of the specs of some of the in-lab machines.
+Proxmox Server CPU: Intel Core i7-9700K GPU: Nvidia GeForce GTX 1660 6GB RAM: 64GB DDR4 3000Mhz NVME SSD&amp;rsquo;s for storage 4x 4TB HDD&amp;rsquo;s (passthrough to NAS) Gaming PC CPU: Intel Core i7-13700K GPU: Nvidia GeForce RTX 3080 RAM: 64GB DDR5 6000 Mhz SSD: Samsung 980 Pro 2TB Mobo: MPG Z790 EDGE WIFI Windows 11 Pro Main PC used for everything.</description>
     </item>
   </channel>
 </rss>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Resize Ubuntu VM Disk in Proxmox | Mafyuh&#39;s Blog</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="Ubuntu">
 <meta name="description" content="1st step: Increase/resize disk from GUI console 2nd step: Extend physical drive partition and check free space with: sudo growpart /dev/sda 3 sudo pvdisplay sudo pvresize /dev/sda3 sudo pvdisplay 3rd step: Extend Logical volume sudo lvdisplay sudo lvextend -l &#43;100%FREE /dev/ubuntu-vg/ubuntu-lv sudo lvdisplay 4th step: Resize Filesystem sudo resize2fs /dev/ubuntu-vg/ubuntu-lv sudo fdisk -l ">
 <meta name="author" content="Matt">
 <link rel="canonical" href="https://mafyuh.com/posts/resize-ubuntu-vm-disk/">
@@ -97,7 +97,7 @@
   "name": "Resize Ubuntu VM Disk in Proxmox",
   "description": "1st step: Increase/resize disk from GUI console 2nd step: Extend physical drive partition and check free space with: sudo growpart /dev/sda 3 sudo pvdisplay sudo pvresize /dev/sda3 sudo pvdisplay 3rd step: Extend Logical volume sudo lvdisplay sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv sudo lvdisplay 4th step: Resize Filesystem sudo resize2fs /dev/ubuntu-vg/ubuntu-lv sudo fdisk -l ",
   "keywords": [
-    
+    "Ubuntu"
   ],
   "articleBody": "1st step: Increase/resize disk from GUI console 2nd step: Extend physical drive partition and check free space with: sudo growpart /dev/sda 3 sudo pvdisplay sudo pvresize /dev/sda3 sudo pvdisplay 3rd step: Extend Logical volume sudo lvdisplay sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv sudo lvdisplay 4th step: Resize Filesystem sudo resize2fs /dev/ubuntu-vg/ubuntu-lv sudo fdisk -l ",
   "wordCount" : "53",
@@ -169,8 +169,8 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://mafyuh.com/guides/" title="Guides">
-                    <span>Guides</span>
+                <a href="https://mafyuh.com/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
             <li>
@@ -179,7 +179,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://mafyuh.com/search" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://mafyuh.com/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -229,6 +229,7 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://mafyuh.com/tags/ubuntu/">Ubuntu</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/">

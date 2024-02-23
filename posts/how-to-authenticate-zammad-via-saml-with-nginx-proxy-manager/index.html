@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>How to authenticate Zammad via SAML with Nginx Proxy Manager | Mafyuh&#39;s Blog</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="authentik">
 <meta name="description" content="If you are getting error messages like:
 422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:
 location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues.">
@@ -103,7 +103,7 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
   "name": "How to authenticate Zammad via SAML with Nginx Proxy Manager",
   "description": "If you are getting error messages like:\n422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:\nlocation / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues.",
   "keywords": [
-    
+    "authentik"
   ],
   "articleBody": "If you are getting error messages like:\n422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:\nlocation / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues.\nHope this helps someone out. Fix was found on this rails github issue.\n(https://github.com/rails/rails/issues/22965)\n",
   "wordCount" : "107",
@@ -175,8 +175,8 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
         </div>
         <ul id="menu">
             <li>
-                <a href="https://mafyuh.com/guides/" title="Guides">
-                    <span>Guides</span>
+                <a href="https://mafyuh.com/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
             <li>
@@ -185,7 +185,7 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
                 </a>
             </li>
             <li>
-                <a href="https://mafyuh.com/search" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://mafyuh.com/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -226,6 +226,7 @@ location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $hos
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://mafyuh.com/tags/authentik/">Authentik</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/">

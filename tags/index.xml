@@ -6,20 +6,34 @@
     <description>Recent content in Tags on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Aug 2023 00:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2024 02:58:07 +0000</lastBuildDate>
     <atom:link href="https://mafyuh.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Import 2023-08-26 04:06</title>
-      <link>https://mafyuh.com/tags/import-2023-08-26-0406/</link>
-      <pubDate>Sat, 26 Aug 2023 00:13:40 +0000</pubDate>
-      <guid>https://mafyuh.com/tags/import-2023-08-26-0406/</guid>
+      <title>Ubuntu</title>
+      <link>https://mafyuh.com/tags/ubuntu/</link>
+      <pubDate>Tue, 06 Feb 2024 02:58:07 +0000</pubDate>
+      <guid>https://mafyuh.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
-      <title>Import 2023-09-08 02:16</title>
-      <link>https://mafyuh.com/tags/import-2023-09-08-0216/</link>
-      <pubDate>Sat, 26 Aug 2023 00:13:40 +0000</pubDate>
-      <guid>https://mafyuh.com/tags/import-2023-09-08-0216/</guid>
+      <title>Authentik</title>
+      <link>https://mafyuh.com/tags/authentik/</link>
+      <pubDate>Sun, 12 Nov 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/tags/authentik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jellyfin</title>
+      <link>https://mafyuh.com/tags/jellyfin/</link>
+      <pubDate>Sat, 11 Nov 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/tags/jellyfin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>https://mafyuh.com/tags/homelab/</link>
+      <pubDate>Thu, 31 Aug 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/tags/homelab/</guid>
       <description></description>
     </item>
   </channel>

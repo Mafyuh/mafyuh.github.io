@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Authentik on Mafyuh&#39;s Blog</title>
+    <link>https://mafyuh.com/tags/authentik/</link>
+    <description>Recent content in Authentik on Mafyuh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Nov 2023 16:20:00 +0000</lastBuildDate>
+    <atom:link href="https://mafyuh.com/tags/authentik/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proton Mail - SimpleLogin authentik Social Login Setup</title>
+      <link>https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/</link>
+      <pubDate>Sun, 12 Nov 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/</guid>
+      <description>This is just a quick guide on how to authenticate your authentik users with Proton using SimpleLogin OIDC.
+To accomplish this, first create a SimpleLogin acct by logging in with Proton. Once thats done go to https://app.simplelogin.io/developer and create a website. Give it your authentik URL.
+Then go to Oauth Settings and copy your client ID and secret for next step. add your authentik URL in redirect URL like this https://auth.</description>
+    </item>
+    <item>
+      <title>How to authenticate Guacamole via authentik with Cloudflare and Nginx Proxy Manager</title>
+      <link>https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</link>
+      <pubDate>Sun, 29 Oct 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</guid>
+      <description>authentik&amp;rsquo;s docs have a guide already for Guacamole. You can find that here. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.
+Error 403 Forbidden While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.</description>
+    </item>
+    <item>
+      <title>How to authenticate Zammad via SAML with Nginx Proxy Manager</title>
+      <link>https://mafyuh.com/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</link>
+      <pubDate>Sun, 29 Oct 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager/</guid>
+      <description>If you are getting error messages like:
+422: the change you wanted was rejected. message from saml: actioncontroller::invalidauthenticitytoken Just make sure you set these in your Nginx Proxy Manager hosts Advanced field:
+location / { proxy_pass http://zammad:8080; # Replace proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-Port $server_port; proxy_set_header X-Forwarded-Host $host; } I spent way too long trying to figure this out, reading through Github issues, breaking my SAML provider and Zammad configs, starting over, when the whole time it was just good old nginx header issues.</description>
+    </item>
+    <item>
+      <title>How To Authenticate KASM via authentik</title>
+      <link>https://mafyuh.com/posts/how-to-authenticate-kasm-via-authentik/</link>
+      <pubDate>Sat, 30 Sep 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/how-to-authenticate-kasm-via-authentik/</guid>
+      <description>You could do this with OpenID as well but this method is using SAML. This guide assumes you already have running instances of Kasm Workspaces and authentik.
+The official authentik docs dont have a Kasm Integration listed at the time. So I thought I would help out anyone who is trying to integrate these services via SAML. authentik&amp;rsquo;s SAML docs can be found here.
+Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authentication - SAML and create a new configuration.</description>
+    </item>
+  </channel>
+</rss>

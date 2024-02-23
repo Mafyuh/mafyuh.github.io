@@ -61,6 +61,14 @@ The official authentik docs dont have a Kasm Integration listed at the time. So 
 Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authentication - SAML and create a new configuration.</description>
     </item>
     <item>
+      <title>Network Traffic Map</title>
+      <link>https://mafyuh.com/posts/network-traffic-map/</link>
+      <pubDate>Thu, 31 Aug 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/network-traffic-map/</guid>
+      <description>This is just a visual representations of how my current setup flows.
+I have some of the docker-compose files that make up this infra on my Gitea</description>
+    </item>
+    <item>
       <title>Software</title>
       <link>https://mafyuh.com/posts/software/</link>
       <pubDate>Sat, 26 Aug 2023 00:13:40 +0000</pubDate>
@@ -69,6 +77,14 @@ Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authenti
 Operating Systems
 Ubuntu 23.04 Ubuntu 22.04 (primary on most systems) CentOS/Fedora 38 (only when Ubuntu doesnt play nice) Debian 11 Proxmox 8 Windows 10/11 TrueNAS Scale (virtualized) CasaOS (zimaboard) pfSense Applications/Containers
 Nginx Proxy Manager Nginx Apache2 Traefik Authentik Portainer Yacht AdGuardHome Pihole Wazuh Zabbix Uptime Kuma Ghost (this blog) Wordpress Hydroxide (proton mail bridge) Calibre Smokeping Openspeedtest Grafana Prometheus InfluxDB PostgresSQL MySQL Watchtower Apache Guacamole Ansible Terraform Packer Vaultwarden Kasm Workspaces Jellyfin Plex Twingate Tailscale Headscale Wireguard LinkStack N8N Gotify Nextcloud Immich AI</description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>https://mafyuh.com/posts/hardware/</link>
+      <pubDate>Fri, 25 Aug 2023 00:13:40 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/hardware/</guid>
+      <description>Most of my infrastructure is hosted on my in-lab Proxmox server, along with a few new machines for dedicated services. Here are some of the specs of some of the in-lab machines.
+Proxmox Server CPU: Intel Core i7-9700K GPU: Nvidia GeForce GTX 1660 6GB RAM: 64GB DDR4 3000Mhz NVME SSD&amp;rsquo;s for storage 4x 4TB HDD&amp;rsquo;s (passthrough to NAS) Gaming PC CPU: Intel Core i7-13700K GPU: Nvidia GeForce RTX 3080 RAM: 64GB DDR5 6000 Mhz SSD: Samsung 980 Pro 2TB Mobo: MPG Z790 EDGE WIFI Windows 11 Pro Main PC used for everything.</description>
     </item>
   </channel>
 </rss>

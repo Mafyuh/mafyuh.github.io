@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jellyfin on Mafyuh&#39;s Blog</title>
+    <link>https://mafyuh.com/tags/jellyfin/</link>
+    <description>Recent content in Jellyfin on Mafyuh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Nov 2023 16:20:00 +0000</lastBuildDate>
+    <atom:link href="https://mafyuh.com/tags/jellyfin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Automate Jellyfin Issue Handling</title>
+      <link>https://mafyuh.com/posts/how-to-automate-jellyfin-issue-handling/</link>
+      <pubDate>Sat, 11 Nov 2023 16:20:00 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/how-to-automate-jellyfin-issue-handling/</guid>
+      <description>I wanted a way to automate when users tell me a video on my Jellyfin server has an issue. After alot of trial and error, ChatGPT, Bard and I came up with this automation.
+Requirements My only requirements when making this was that it was free and self-hostable. Not even any NPM extensions are required in AP. Actual Software requirements are:
+Sonarr Radarr Overseerr/Jellyseerr Optional
+SMTP server or ability to send SMTP messages (can also use discord) ActivePieces or any other automation platform that supports TS.</description>
+    </item>
+  </channel>
+</rss>

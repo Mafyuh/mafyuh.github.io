@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mafyuh.com/about/</loc>
+    <lastmod>2024-02-22T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/contact/</loc>
+    <lastmod>2024-02-22T08:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mafyuh.com/</loc>
-    <lastmod>2024-02-06T02:58:07+00:00</lastmod>
+    <lastmod>2024-02-22T08:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/posts/</loc>
     <lastmod>2024-02-06T02:58:07+00:00</lastmod>
@@ -11,10 +17,22 @@
     <loc>https://mafyuh.com/posts/resize-ubuntu-vm-disk/</loc>
     <lastmod>2024-02-06T02:58:07+00:00</lastmod>
   </url><url>
+    <loc>https://mafyuh.com/tags/</loc>
+    <lastmod>2024-02-06T02:58:07+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/tags/ubuntu/</loc>
+    <lastmod>2024-02-06T02:58:07+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/tags/authentik/</loc>
+    <lastmod>2023-11-12T16:20:00+00:00</lastmod>
+  </url><url>
     <loc>https://mafyuh.com/posts/proton-mail-authentik-social-login-setup/</loc>
     <lastmod>2023-11-12T16:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/posts/how-to-automate-jellyfin-issue-handling/</loc>
+    <lastmod>2023-11-11T16:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/tags/jellyfin/</loc>
     <lastmod>2023-11-11T16:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/posts/how-to-authenticate-guacamole-authentik-nginxproxymanager/</loc>
@@ -26,28 +44,21 @@
     <loc>https://mafyuh.com/posts/how-to-authenticate-kasm-via-authentik/</loc>
     <lastmod>2023-09-30T16:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.com/categories/</loc>
-    <lastmod>2023-08-26T00:13:40+00:00</lastmod>
+    <loc>https://mafyuh.com/tags/homelab/</loc>
+    <lastmod>2023-08-31T16:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.com/tags/import-2023-08-26-0406/</loc>
-    <lastmod>2023-08-26T00:13:40+00:00</lastmod>
-  </url><url>
-    <loc>https://mafyuh.com/categories/import-2023-08-26-0406/</loc>
-    <lastmod>2023-08-26T00:13:40+00:00</lastmod>
-  </url><url>
-    <loc>https://mafyuh.com/tags/import-2023-09-08-0216/</loc>
-    <lastmod>2023-08-26T00:13:40+00:00</lastmod>
-  </url><url>
-    <loc>https://mafyuh.com/categories/import-2023-09-08-0216/</loc>
-    <lastmod>2023-08-26T00:13:40+00:00</lastmod>
+    <loc>https://mafyuh.com/posts/network-traffic-map/</loc>
+    <lastmod>2023-08-31T16:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/posts/software/</loc>
     <lastmod>2023-08-26T00:13:40+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.com/tags/</loc>
-    <lastmod>2023-08-26T00:13:40+00:00</lastmod>
+    <loc>https://mafyuh.com/posts/hardware/</loc>
+    <lastmod>2023-08-25T00:13:40+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/archives/</loc>
+  </url><url>
+    <loc>https://mafyuh.com/categories/</loc>
   </url><url>
     <loc>https://mafyuh.com/search/</loc>
   </url>
