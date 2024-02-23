@@ -20,6 +20,14 @@ While I continue to stay up-to-date with hardware, my focus has shifted more tow
 - Kubernetes & Docker: Pretty much everything I run is containerized.
 - AI: I'm also passionate about artificial intelligence (AI), exploring self-hosted text-generation models like Phi, Llama-2, and Gemma, along with running image-generation Stable-Diffusion models. I show you how I integrate AI into various software projects and explore its potential impact.
 
+## Other Hobbies & Interests
+- MMA Junkie. I haven't missed a major UFC event since I started watching in 2018.
+- Milwaukee Bucks Fan. Born and raised in SE Wisconsin, been a Bucks fan my whole life.
+- MCU Fanboy. I am a huge Marvel fan, especially Spider-Man.
+- Gamer. I spend alot of time playing video games, for the last few years my main game has been Rocket League, as well as COD. But I play all styles of games.
+- Pets. I have a dog named Knox who's a husky-lab mix. I spend mostly all day everyday giving him pets.
+
+
 ## Why mafyuh?
 When I was 9 I needed a unique username for Google. My full name is Matthew, if you say mafyuh fast it *sort-of* sounds the same. Anyways, it stuck. The google account didn't though :(
 
