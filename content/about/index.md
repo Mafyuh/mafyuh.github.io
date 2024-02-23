@@ -18,6 +18,7 @@ While I continue to stay up-to-date with hardware, my focus has shifted more tow
 - Self-Hosting: Managing my own homelab and orchestrating various services.
 - Cybersecurity: How I keep my infrastructure safe and secure.
 - Kubernetes & Docker: Pretty much everything I run is containerized.
+- AI: I'm also passionate about artificial intelligence (AI), exploring self-hosted text-generation models like Phi, Llama-2, and Gemma, along with running image-generation Stable-Diffusion models. I show you how I integrate AI into various software projects and explore its potential impact.
 
 ## Why mafyuh?
 When I was 9 I needed a unique username for Google. My full name is Matthew, if you say mafyuh fast it *sort-of* sounds the same. Anyways, it stuck. The google account didn't though :(
