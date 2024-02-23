@@ -200,21 +200,7 @@ Error 403 Forbidden While it was looping, I checked my Guacamole docker containe
     <div class="post-meta"><span title='2023-10-29 16:20:00 +0000 UTC'>October 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;344 words&nbsp;·&nbsp;Matt
 
 </div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#error-403-forbidden">Error 403 Forbidden</a></li>
-  </ul>
-</nav>
-        </div>
-    </details>
-</div>
-
+  </header> 
   <div class="post-content"><p>authentik&rsquo;s docs have a guide already for Guacamole. You can find that <a href="https://goauthentik.io/integrations/services/apache-guacamole/">here</a>. Follow all the instructions there, (especially the part where you create a user in Guacamole with the USERNAME of your email. not just filling in the email), but if you are using Cloudflare as our DNS you may run into problems. Such as infinite redirect loop.</p>
 <h2 id="error-403-forbidden">Error 403 Forbidden<a hidden class="anchor" aria-hidden="true" href="#error-403-forbidden">#</a></h2>
 <p>While it was looping, I checked my Guacamole docker container logs in Portainer, and found the 403 Forbidden error.</p>
