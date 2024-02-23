@@ -61,6 +61,14 @@ The official authentik docs dont have a Kasm Integration listed at the time. So 
 Setting up Kasm In the Kasm Workspaces admin, click Access Management - Authentication - SAML and create a new configuration.</description>
     </item>
     <item>
+      <title>How to Show More Options By Default in Windows 11</title>
+      <link>https://mafyuh.com/posts/how-to-show-more-options-by-default-in-windows-11/</link>
+      <pubDate>Tue, 05 Sep 2023 23:45:25 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/how-to-show-more-options-by-default-in-windows-11/</guid>
+      <description>To &amp;lsquo;Show more options&amp;rsquo; by default in File Explorer, open Command Prompt as Administrator, then type or paste the following command:
+reg add HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve /d &amp;#34;&amp;#34; /f and hit Enter.</description>
+    </item>
+    <item>
       <title>Network Traffic Map</title>
       <link>https://mafyuh.com/posts/network-traffic-map/</link>
       <pubDate>Thu, 31 Aug 2023 16:20:00 +0000</pubDate>

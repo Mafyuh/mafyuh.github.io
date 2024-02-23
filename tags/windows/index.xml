@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows on Mafyuh&#39;s Blog</title>
+    <link>https://mafyuh.com/tags/windows/</link>
+    <description>Recent content in Windows on Mafyuh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Sep 2023 23:45:25 +0000</lastBuildDate>
+    <atom:link href="https://mafyuh.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Show More Options By Default in Windows 11</title>
+      <link>https://mafyuh.com/posts/how-to-show-more-options-by-default-in-windows-11/</link>
+      <pubDate>Tue, 05 Sep 2023 23:45:25 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/how-to-show-more-options-by-default-in-windows-11/</guid>
+      <description>To &amp;lsquo;Show more options&amp;rsquo; by default in File Explorer, open Command Prompt as Administrator, then type or paste the following command:
+reg add HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve /d &amp;#34;&amp;#34; /f and hit Enter.</description>
+    </item>
+  </channel>
+</rss>
