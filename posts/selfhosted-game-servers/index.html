@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Selfhosted Game Servers | Mafyuh&#39;s Blog</title>
+<meta name="keywords" content="Homelab">
+<meta name="description" content="Something I only got into recently is hosting video game servers for games that support servers. Maybe it&rsquo;s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.
+Sons of the Forest I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo.">
+<meta name="author" content="Matt">
+<link rel="canonical" href="https://mafyuh.com/posts/selfhosted-game-servers/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://mafyuh.com/assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mafyuh.com/assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mafyuh.com/assets/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mafyuh.com/assets/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mafyuh.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://mafyuh.com/posts/selfhosted-game-servers/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script defer data-domain="mafyuh.com" src="https://stats.mafyuh.com/js/script.js"></script>
+
+<meta property="og:title" content="Selfhosted Game Servers" />
+<meta property="og:description" content="Something I only got into recently is hosting video game servers for games that support servers. Maybe it&rsquo;s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.
+Sons of the Forest I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mafyuh.com/posts/selfhosted-game-servers/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-22T00:13:40+00:00" />
+<meta property="article:modified_time" content="2024-02-22T00:13:40+00:00" /><meta property="og:site_name" content="Mafyuh&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Selfhosted Game Servers"/>
+<meta name="twitter:description" content="Something I only got into recently is hosting video game servers for games that support servers. Maybe it&rsquo;s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.
+Sons of the Forest I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://mafyuh.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Selfhosted Game Servers",
+      "item": "https://mafyuh.com/posts/selfhosted-game-servers/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Selfhosted Game Servers",
+  "name": "Selfhosted Game Servers",
+  "description": "Something I only got into recently is hosting video game servers for games that support servers. Maybe it\u0026rsquo;s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.\nSons of the Forest I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo.",
+  "keywords": [
+    "Homelab"
+  ],
+  "articleBody": "Something I only got into recently is hosting video game servers for games that support servers. Maybe it’s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.\nSons of the Forest I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo.\nSetting this up took a bit, as the README was not very great. But I got it all figured out after reading GH Issues for who knows how long. Good old Linux permissions.\nHere is a link to the repo I used https://github.com/jammsen/docker-sons-of-the-forest-dedicated-server\nVM Details\nProxmox VM Ubuntu 22.04 Cloud image 4 core host 16GB RAM 100GB Storage First I created a sons folder in my home directory and cd into it. To make the games directories I run:\nmkdir game steamcmd winedata My docker-compose is the same as on GH, but it is as follows:\nversion: '3.9' services: sons-of-the-forest-dedicated-server: container_name: sons-of-the-forest-dedicated-server image: jammsen/sons-of-the-forest-dedicated-server:latest restart: always environment: ALWAYS_UPDATE_ON_START: 1 ports: - 8766:8766/udp - 27016:27016/udp - 9700:9700/udp volumes: - ./steamcmd:/steamcmd - ./game:/sonsoftheforest - ./winedata:/winedata This is in the sons folder.\nWhenever I go and play I enable the port forward rules in my pfSense. Then once I or a friend get off I disable the forwards. The logs from the container do state when in sleep mode, so I am thinking of an automation that when in sleep mode it’ll update my pfSense port forward. Maybe one day, but for now manually enable/disable. I do this as I dont want any port forwards on my network, if its just temporary like these it’s fine, but never leave a port forward open to game services if its inside your home network.\nPalworld When Palworld first came out I really wanted to mod actual Pokemon into the game, as I feel most of the Pals in the game look like AI generated garbage. But I’m no video game mod-dev and I dont see anything on the internet. (Who else loves Nintendo?) so I haven’t had this container spun up in awhile. I haven’t even played since launch, but I paid for the game and set up a server just cause.\nWhen I googled “Palworld server github”, I laughed cause the first result was the same dev as the sons server I run. I thought it was gonna be hard but they made this one simple, just follow his README.\nhttps://github.com/jammsen/docker-palworld-dedicated-server\nI run this container on the same VM as Sons, limiting IP reservations as well as vulnerable systems.\nSame thing goes for folder structure here, I just made a pal folder in home directory. I do the same thing with port forwards as I do for Sons\nThanks to the Developers on these repo’s for your work.\n",
+  "wordCount" : "478",
+  "inLanguage": "en",
+  "datePublished": "2024-02-22T00:13:40Z",
+  "dateModified": "2024-02-22T00:13:40Z",
+  "author":{
+    "@type": "Person",
+    "name": "Matt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mafyuh.com/posts/selfhosted-game-servers/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mafyuh's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mafyuh.com/assets/favicon/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://mafyuh.com/" accesskey="h" title="Mafyuh&#39;s Blog (Alt + H)">
+                <img src="https://mafyuh.com/assets/favicon/favicon.svg" alt="" aria-label="logo"
+                    height="35">Mafyuh&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://mafyuh.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://mafyuh.com/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://mafyuh.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://mafyuh.com/">Home</a>&nbsp;»&nbsp;<a href="https://mafyuh.com/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Selfhosted Game Servers
+    </h1>
+    <div class="post-meta"><span title='2024-02-22 00:13:40 +0000 UTC'>February 22, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;478 words&nbsp;·&nbsp;Matt
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Something I only got into recently is hosting video game servers for games that support servers. Maybe it&rsquo;s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.</p>
+<h1 id="sons-of-the-forest">Sons of the Forest<a hidden class="anchor" aria-hidden="true" href="#sons-of-the-forest">#</a></h1>
+<p>I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo.</p>
+<p>Setting this up took a bit, as the README was not very great. But I got it all figured out after reading GH Issues for who knows how long. Good old Linux permissions.</p>
+<p>Here is a link to the repo I used
+<a href="https://github.com/jammsen/docker-sons-of-the-forest-dedicated-server">https://github.com/jammsen/docker-sons-of-the-forest-dedicated-server</a></p>
+<p>VM Details</p>
+<ul>
+<li>Proxmox VM Ubuntu 22.04 Cloud image</li>
+<li>4 core host</li>
+<li>16GB RAM</li>
+<li>100GB Storage</li>
+</ul>
+<p>First I created a sons folder in my home directory and cd into it. To make the games directories I run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir game steamcmd winedata
+</span></span></code></pre></div><p>My docker-compose is the same as on GH, but it is as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">version: <span class="s1">&#39;3.9&#39;</span>
+</span></span><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl">  sons-of-the-forest-dedicated-server:
+</span></span><span class="line"><span class="cl">    container_name: sons-of-the-forest-dedicated-server
+</span></span><span class="line"><span class="cl">    image: jammsen/sons-of-the-forest-dedicated-server:latest
+</span></span><span class="line"><span class="cl">    restart: always
+</span></span><span class="line"><span class="cl">    environment:
+</span></span><span class="line"><span class="cl">      ALWAYS_UPDATE_ON_START: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    ports:
+</span></span><span class="line"><span class="cl">      - 8766:8766/udp
+</span></span><span class="line"><span class="cl">      - 27016:27016/udp
+</span></span><span class="line"><span class="cl">      - 9700:9700/udp
+</span></span><span class="line"><span class="cl">    volumes:
+</span></span><span class="line"><span class="cl">      - ./steamcmd:/steamcmd
+</span></span><span class="line"><span class="cl">      - ./game:/sonsoftheforest
+</span></span><span class="line"><span class="cl">      - ./winedata:/winedata
+</span></span></code></pre></div><p>This is in the sons folder.</p>
+<p>Whenever I go and play I enable the port forward rules in my pfSense. Then once I or a friend get off I disable the forwards. The logs from the container do state when in sleep mode, so I am thinking of an automation that when in sleep mode it&rsquo;ll update my pfSense port forward. Maybe one day, but for now manually enable/disable. I do this as I dont want any port forwards on my network, if its just temporary like these it&rsquo;s fine, but never leave a port forward open to game services if its inside your home network.</p>
+<h1 id="palworld">Palworld<a hidden class="anchor" aria-hidden="true" href="#palworld">#</a></h1>
+<p>When Palworld first came out I really wanted to mod actual Pokemon into the game, as I feel most of the Pals in the game look like AI generated garbage. But I&rsquo;m no video game mod-dev and I dont see anything on the internet. (Who else loves Nintendo?) so I haven&rsquo;t had this container spun up in awhile. I haven&rsquo;t even played since launch, but I paid for the game and set up a server just cause.</p>
+<p>When I googled &ldquo;Palworld server github&rdquo;, I laughed cause the first result was the same dev as the sons server I run. I thought it was gonna be hard but they made this one simple, just follow his README.</p>
+<p><a href="https://github.com/jammsen/docker-palworld-dedicated-server">https://github.com/jammsen/docker-palworld-dedicated-server</a></p>
+<p>I run this container on the same VM as Sons, limiting IP reservations as well as vulnerable systems.</p>
+<p>Same thing goes for folder structure here, I just made a pal folder in home directory. I do the same thing with port forwards as I do for Sons</p>
+<p>Thanks to the Developers on these repo&rsquo;s for your work.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://mafyuh.com/tags/homelab/">Homelab</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://mafyuh.com/posts/resize-ubuntu-vm-disk/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Resize Ubuntu VM Disk in Proxmox</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://mafyuh.com/">Mafyuh&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

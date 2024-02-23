@@ -6,8 +6,16 @@
     <description>Recent content in Homelab on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Aug 2023 16:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Feb 2024 00:13:40 +0000</lastBuildDate>
     <atom:link href="https://mafyuh.com/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Selfhosted Game Servers</title>
+      <link>https://mafyuh.com/posts/selfhosted-game-servers/</link>
+      <pubDate>Thu, 22 Feb 2024 00:13:40 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/selfhosted-game-servers/</guid>
+      <description>Something I only got into recently is hosting video game servers for games that support servers. Maybe it&amp;rsquo;s just something about having another server, cause these are totally not needed. But they are pretty easy to setup thanks to the open-source community.
+Sons of the Forest I wanted to play sons one day and when I looked into multiplayer I seen there were options for servers. This sparked me Googling and finding this repo.</description>
+    </item>
     <item>
       <title>Network Traffic Map</title>
       <link>https://mafyuh.com/posts/network-traffic-map/</link>
