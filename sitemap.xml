@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mafyuh.com/posts/docker-arr-stack-guide/</loc>
+    <lastmod>2024-02-23T00:13:40+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/tags/homelab/</loc>
+    <lastmod>2024-02-23T00:13:40+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/</loc>
+    <lastmod>2024-02-23T00:13:40+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/posts/</loc>
+    <lastmod>2024-02-23T00:13:40+00:00</lastmod>
+  </url><url>
+    <loc>https://mafyuh.com/tags/</loc>
+    <lastmod>2024-02-23T00:13:40+00:00</lastmod>
+  </url><url>
     <loc>https://mafyuh.com/about/</loc>
     <lastmod>2024-02-22T08:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/contact/</loc>
     <lastmod>2024-02-22T08:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mafyuh.com/</loc>
-    <lastmod>2024-02-22T08:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mafyuh.com/tags/homelab/</loc>
-    <lastmod>2024-02-22T00:13:40+00:00</lastmod>
-  </url><url>
-    <loc>https://mafyuh.com/posts/</loc>
-    <lastmod>2024-02-22T00:13:40+00:00</lastmod>
-  </url><url>
     <loc>https://mafyuh.com/posts/selfhosted-game-servers/</loc>
-    <lastmod>2024-02-22T00:13:40+00:00</lastmod>
-  </url><url>
-    <loc>https://mafyuh.com/tags/</loc>
     <lastmod>2024-02-22T00:13:40+00:00</lastmod>
   </url><url>
     <loc>https://mafyuh.com/posts/resize-ubuntu-vm-disk/</loc>

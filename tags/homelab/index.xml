@@ -6,8 +6,18 @@
     <description>Recent content in Homelab on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Feb 2024 00:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2024 00:13:40 +0000</lastBuildDate>
     <atom:link href="https://mafyuh.com/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Compose Arr Stack Guide</title>
+      <link>https://mafyuh.com/posts/docker-arr-stack-guide/</link>
+      <pubDate>Fri, 23 Feb 2024 00:13:40 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/docker-arr-stack-guide/</guid>
+      <description>This guide is for someone who is looking to setup an Arr Stack for media organization and downloading. This guide requires no remote path mappings, follows Trash-Guides recommendations and every command needed is copy-pasteable. The VM&amp;rsquo;s in this guide are hosted on Proxmox 8.1.4, but you can use any Ubuntu environment (WSL-2, VirtualBox, etc.)
+Arr VM Specs:
+2 core host 8GB RAM 100GB Storage Downloader VM Specs:
+2 core host 4GB RAM 250GB Storage (can download up to this limit at a time, be careful when mass downloading or give plenty of space) Prerequisites Ubuntu 22.</description>
+    </item>
     <item>
       <title>Selfhosted Game Servers</title>
       <link>https://mafyuh.com/posts/selfhosted-game-servers/</link>
