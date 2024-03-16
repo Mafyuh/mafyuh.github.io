@@ -6,8 +6,16 @@
     <description>Recent content in Posts on Mafyuh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Feb 2024 00:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2024 00:13:40 +0000</lastBuildDate>
     <atom:link href="https://mafyuh.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to create a Solana Token (SPL) from CLI with metadata</title>
+      <link>https://mafyuh.com/posts/spl-token-cli/</link>
+      <pubDate>Fri, 15 Mar 2024 00:13:40 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/spl-token-cli/</guid>
+      <description>I wanted to create an SPL token and after looking online I couldn&amp;rsquo;t find an updated guide. So I thought I would learn and share. There are much easier ways to create these tokens but they cost $ and spending more $ than needed is no fun. This guide costs as little SOL as possible as everything is transacted directly on-chain. Everything is done from the CLI.
+This guide just covers the basics, the tools used are way more powerful than what I use them for, this is just creating a basic token with no taxes or locked supply or anything complex, but these tools do support those options.</description>
+    </item>
     <item>
       <title>Docker Compose Arr Stack Guide</title>
       <link>https://mafyuh.com/posts/docker-arr-stack-guide/</link>
