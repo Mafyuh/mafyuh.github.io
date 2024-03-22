@@ -163,4 +163,55 @@ If you ever need to update your metadata, you can do so by running:
 metaboss update uri --keypair /home/mafyuh/.config/solana/id.json --account <TOKEN_ADDRESS> --new-uri https://arweave.net/new-arweave-json-url
 ```
 
-Hope this guide has helped you save some $ when creating your Solana tokens! If you appreciate the post and wanna send some tokens as thanks, my SOL wallet address is: 3RYPrKxC6BNv3XUMf8Cyjg36pw6Qu1txRvqq6LNq9Psj
+## BONUS Creating a Market
+Now that you have a coin ready to go, you probably wanna get it listed so others can buy, I'll try to make this process as cheap and easy as possible. Thanks to this [Reddit post](https://www.reddit.com/r/solana/comments/1b50vj0/create_cheap_openbook_market_solana_only_04_sol/?utm_source=share&utm_medium=web2x&context=3) for finding these values.
+
+You need to connect your wallet and have the tokens in the wallet that is connected for this to work, so either restore your private key or send tokens to your wallet on PC. 
+
+Note I would not create this small of a market for a production coin, as what you are paying for when creating a market is essentially space on the blockchain for all your transactions. Long term projects should certainly not pay this little for a market, probably only good for smaller meme coins. If you are planning a long-term project you should probably be paying a few SOL for your market fee.
+
+[Raydium has some good docs on how to create a market and pool](https://docs.raydium.io/raydium/pool-creation/creating-a-standard-amm-pool), I would review these docs as well.
+
+- First go to https://openbook-explorer.xyz/market/create
+- Click Existing under mints
+1. Base Mint: Your token address
+2. Quote Mint: So11111111111111111111111111111111111111112 (this is swapping for SOL)
+- Under Mints , since by default our token was 9 decimals, we will set these values
+1. Min Order size: 0.1
+2. Price Tick: 0.99999998 or 0.99999999
+- Under advanced options check use advanced options. (this is what we are paying for, if long-term pay the 2.78 SOL)
+1. Event Queue Length: 128
+2. Request Queue Length: 63
+3. Orderbook Length: 201
+
+At this time the cost to create this market is 0.32 SOL. Keep note of the market address.
+
+## BONUS Creating Pool
+Now that we have a market, we need to create a pool. I've found Raydium to be the cheapest fee, but I would not cheap out on how much SOL you delegate to the pool as this is gonna be your liquidity, and having almost no liquidity is gonna be big red flag. But I have in the past just delegated .1 SOL and it worked, but trust me this is not gonna work out well. 
+
+- First go to https://raydium.io/liquidity/create/
+1. Connect Wallet
+2. Paste Market ID
+- Under Price and initial liquidity
+1. What we are doing here is setting our tokens starting price, the amount of tokens you put in the pool at the start decides how much they're worth compared to SOL. All your tokenomics and things like this should probably already be done at this point, unless you're just YOLO'ing it like I did. This is by far the most costly part of the process.
+2. Set a certain start time if you want.
+- Hit Initialize Liquidity Pool and confirm in your wallet.
+
+The total fee currently is .68 SOL to create this pool. 
+
+You will recieve all the LP tokens in your wallet. You will probably want to burn these LP tokens so buyers won't be scared off. There are many ways to do this, you can use the cli using this command:
+```
+spl-token burn <TOKEN-ACCOUNT-ADDRESS> <AMOUNT>
+```
+You can get the address on Solscan. Some wallets like solflare allow you to burn tokens thru the wallet. Or you can use online services like https://sol-incinerator.com/ 
+
+If you want to get your price to show on the wallets, you need to get listed on CoinGecko. There's a bunch of requirements, to apply here is a [link](https://support.coingecko.com/hc/en-us/articles/7291312302617-How-to-list-new-cryptocurrencies-on-CoinGecko).
+
+To get listed on Jupiter, make a PR to their repo https://github.com/jup-ag/token-list. There are plenty of videos online how to do this.
+
+Now you just need to start your social media campaigns and best of luck!
+
+Total in Fees: 1 SOL (plus your liquidity)
+
+
+Hope this guide has helped you save some $ when creating your Solana tokens! If you appreciate the post and wanna send some tokens as thanks, my SOL wallet address is: 2DDyEt5N4y77ETWhhUmkZiympQbpjkfrt8FcMKhB1iWU
