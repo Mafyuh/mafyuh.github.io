@@ -13,8 +13,7 @@
       <link>https://mafyuh.com/posts/spl-token-cli/</link>
       <pubDate>Fri, 15 Mar 2024 00:13:40 +0000</pubDate>
       <guid>https://mafyuh.com/posts/spl-token-cli/</guid>
-      <description>I wanted to create an SPL token and after looking online I couldn&amp;rsquo;t find an updated guide. So I thought I would learn and share. There are much easier ways to create these tokens but they cost $ and spending more $ than needed is no fun. This guide costs as little SOL as possible as everything is transacted directly on-chain. Everything is done from the CLI.
-This guide just covers the basics, the tools used are way more powerful than what I use them for, this is just creating a basic token with no taxes or locked supply or anything complex, but these tools do support those options.</description>
+      <description>I wanted to create an SPL token and after looking online I couldn&amp;rsquo;t find an updated guide. I mainly just found Keyglowmax (SCAM). So I thought I would learn and share. There are much easier ways to create these tokens but they cost $ and spending more $ than needed is no fun. They also have you connect your wallet which is enough of a worry. This guide costs as little SOL as possible as everything is transacted directly on-chain.</description>
     </item>
     <item>
       <title>Docker Compose Arr Stack Guide</title>
