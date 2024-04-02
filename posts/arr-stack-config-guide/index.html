@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Configuring Arr Stack | Mafyuh&#39;s Blog</title>
+<meta name="keywords" content="Homelab">
+<meta name="description" content="This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to TRaSH-Guides often in this post. It&rsquo;s like the bible of the Arr&rsquo;s so I would look there for more options, especially if your setup differs from mine.
+Prerequisites Any Usenet Server Subscription (preferred) Any Usenet Indexer Subscription (preferred) Real-Debrid Subscription (if you like torrents being fast) VPN Subscription (Bare minimum needed to download torrents) Configuration Prowlarr We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it&rsquo;s the part where you&rsquo;re gonna spend some $">
+<meta name="author" content="Matt">
+<link rel="canonical" href="https://mafyuh.com/posts/arr-stack-config-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://mafyuh.com/assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mafyuh.com/assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mafyuh.com/assets/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mafyuh.com/assets/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mafyuh.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://mafyuh.com/posts/arr-stack-config-guide/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script defer data-domain="mafyuh.com" src="https://stats.mafyuh.com/js/script.js"></script>
+
+<meta property="og:title" content="Configuring Arr Stack" />
+<meta property="og:description" content="This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to TRaSH-Guides often in this post. It&rsquo;s like the bible of the Arr&rsquo;s so I would look there for more options, especially if your setup differs from mine.
+Prerequisites Any Usenet Server Subscription (preferred) Any Usenet Indexer Subscription (preferred) Real-Debrid Subscription (if you like torrents being fast) VPN Subscription (Bare minimum needed to download torrents) Configuration Prowlarr We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it&rsquo;s the part where you&rsquo;re gonna spend some $" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mafyuh.com/posts/arr-stack-config-guide/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-25T00:13:40+00:00" />
+<meta property="article:modified_time" content="2024-02-25T00:13:40+00:00" /><meta property="og:site_name" content="Mafyuh&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuring Arr Stack"/>
+<meta name="twitter:description" content="This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to TRaSH-Guides often in this post. It&rsquo;s like the bible of the Arr&rsquo;s so I would look there for more options, especially if your setup differs from mine.
+Prerequisites Any Usenet Server Subscription (preferred) Any Usenet Indexer Subscription (preferred) Real-Debrid Subscription (if you like torrents being fast) VPN Subscription (Bare minimum needed to download torrents) Configuration Prowlarr We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it&rsquo;s the part where you&rsquo;re gonna spend some $"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://mafyuh.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Configuring Arr Stack",
+      "item": "https://mafyuh.com/posts/arr-stack-config-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Configuring Arr Stack",
+  "name": "Configuring Arr Stack",
+  "description": "This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to TRaSH-Guides often in this post. It\u0026rsquo;s like the bible of the Arr\u0026rsquo;s so I would look there for more options, especially if your setup differs from mine.\nPrerequisites Any Usenet Server Subscription (preferred) Any Usenet Indexer Subscription (preferred) Real-Debrid Subscription (if you like torrents being fast) VPN Subscription (Bare minimum needed to download torrents) Configuration Prowlarr We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it\u0026rsquo;s the part where you\u0026rsquo;re gonna spend some $",
+  "keywords": [
+    "Homelab"
+  ],
+  "articleBody": "This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to TRaSH-Guides often in this post. It’s like the bible of the Arr’s so I would look there for more options, especially if your setup differs from mine.\nPrerequisites Any Usenet Server Subscription (preferred) Any Usenet Indexer Subscription (preferred) Real-Debrid Subscription (if you like torrents being fast) VPN Subscription (Bare minimum needed to download torrents) Configuration Prowlarr We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it’s the part where you’re gonna spend some $\n1st thing to do is load up your web browser and go to Prowlarr. In your URL bar put http://{IP-ADDRESS}:9696.\nYou should be prompted to create an account. It doesn’t matter much if you choose Basic or Forms for authentication.\nThis guide is just going to be using Usenet, as I recommend it over torrenting.\nProwlarr’s job is to search thru all the indexers and return those results over to Radarr/Sonarr.\nIndexers You can find links to all the indexers out there on this Usenet subreddit. I will provide a screenshot of my Indexers list:\nI would say the most downloaded stuff I have is from NZBgeek, followed by DrunkenSlug then NZBFinder. If I were to only be able to have 1 it would be NZBgeek for sure.\nSign up for whatever service you want, once you pay they should give you your API key, usually under profile on the indexer website. Take that API over to Prowlarr and you should be able to select your indexer from the list, paste in your API key and save. You can also click on the wrench icon next to the indexer and set your VIP expiration date, so Prowlarr reminds you to renew.\nI paid for as lifetime altHUB account as well as yearly for Slug and Geek, A lot of the others that are under Interactive Search Sync Profile are free accounts that they limit the amount of API hits per day. You can tell Prowlarr this to by setting up Sync Profiles like I have so it doesn’t burn your API hits fast. Link\nThats pretty much it for indexers, now you just need a provider which is covered in the Sabnzbd portion.\nUsenet vs Torrenting Usenet wins all day IMO. I started off with torrenting years ago and there would always be something I couldn’t find. Once I found usenet that problem went away and hasn’t returned. I still have a Real-Debrid subscription, however I am not planning on renewing when it runs up as I just don’t need torrents anymore for media. The only exception being PPV fights, which at least with the indexers I use, I cant find much on usenet. Usenet grabs about 95% of what I need. And I’m sure the other 5% would have still been found, but torrent won the algorithm battle. You also do not need to use a VPN when using Usenet as all big providers use HTTPS.\nIf you are new to Usenet, their subreddit wiki will help you out. Unlike torrenting which is peer to peer and fully decentralized, usenet is more centralized and has many servers that host the content (Providers). There is a monthly fee for being able to access these servers. You also need an indexer in order to find NZB files, which is then sent to your provider for downloading. Indexers are much cheaper at usually a few bucks a year.\nConnecting Prowlarr to Radarr/Sonarr For now skip to setting up Radarr and Sonarr, after setting up you will need their API keys which can be found under Settings - General - API Key.\nIn Prowlarr go to Settings - Apps - Create an application and click Radarr, filling in all api key and changing the host if needed. Do the same thing for Sonarr. This automatically syncs all your indexers into Radarr/Sonarr and if you want to add more indexers you just have to add it in Prowlarr and not 2 separate places.\nSabnzbd Sab is what connects to our Usenet providers and downloads the NZB files that Radarr/Sonarr gave to it.\nFirst load up sab at http://{IP_ADDRESS}:8080 . One of the first things it has you do is enter you server details, which takes us into providers.\nProviders These are the costliest part of the process, although for good reason. There are a bunch of providers out there, which all can be found here.\nI have used Newshosting, NewsDemon and UsenetNow. You only need 1 of these to download most stuff, but I prefer to have 2 as I have seen some servers don’t have a file that another one did. It’s rare but happens. As of the time of me writing this I am using UsenetNow for $6/month and Newsdemon $50 for 12 months using this link (Not referral just found a promo link on Reddit I saved)\nOnce you select your provider and pay, they should email you your login credentials that you just put into Sab. Remember to set the connections to whatever your provider allows to maximize download speeds.\nFolders All we really need to do to configure Sab is to set the Temp and Completed Download folders. For Temporary:\n/data/usenet/incomplete and for complete:\n/data/usenet/complete Make sure you save changes.\nRadarr Initial Setup 1st thing to do is load up your web browser and go to Radarr. In your URL bar put http://{IP-ADDRESS}:7878 .\nPutting in the IP of you Ubuntu machine. If you are using something like WSL just use localhost as IP.\nYou should be prompted to create an account. It doesn’t matter much if you choose Basic or Forms for authentication.\nIf you are starting fresh with no content, go to Settings - Media Management - Root Folders and add a root folder, you can use the movies folder that was located at /data/media/movies or you can go into /data/media and name your folders however you want to.\nMy media directory breaks down the movies by category: 4K, Movies, Marvel, DC, Kids, Stand-Up, Requested Content and Fights. They are added to Radarr individually as follows:\nIf you already have media you want to import into Radarr, click Movies - Library Import - Start Import. Remember all you files are going to be under /data/media if you followed my installation guide. This also adds the chosen directory as a root folder.\nConnect Sab to Radarr To connect Sab to Radarr, in Radarr go to Settings - Download Clients - add - Sabnzbd - fill in all your Sab details, getting the API key from Sab - General - Api Key (Not NZB Key)\nNaming Files It’s best practice to rename your files, Radarr does this automatically for you. To do this go to Settings - Media Management - Movie Naming. Make sure you check the Rename Movies checkbox. Everything should be fine by default besides Standard Movie Format, Jellyfin recommends this:\n{Movie CleanTitle} {(Release Year)} [imdbid-{ImdbId}] - {Edition Tags }{[Custom Formats]}{[Quality Full]}{[MediaInfo 3D]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}[{Mediainfo VideoCodec}]{-Release Group} Make sure you hit save. Note this only automatically renames the file if it was downloaded from Radarr, if you imported your own media you need to manually click rename files under Movies - Click Edit Movies - Select All - Rename Files on bottom of screen.\nCustom Formats Every single one of these custom formats is from trash-guides, you can see how to import them here. Add all custom formats that you want to look out for, whether good or bad. What custom formats do is essentially put a label on files just based off the files name, as well as provide these labels a score which is used when auto-searching for a movie. Just adding custom formats on it’s own does nothing, setting up a Quality profile to rank these custom formats is how we pick and choose what we want. Reading through trash guides will yield good results.\nQuality Profiles Now you need to ask yourself what your plan here is, do you want the highest possible quality content with no regards to storage space? Do you want a giant library filled with lower quality content? Do you have a 4K TV? Do you have HDR/HDR10/Dolby Vision on your TV? Do you have a Dolby Atmos system and want the top notch audio? What about the people you maybe plan on sharing these files with, do you know their TV’s capabilities? Are you gonna be using Plex or Jellyfin to stream this media?\nYou should consider all these things when setting this up so you don’t have to manually search for files. That’s the point of this whole section is to automate the searching process and find the correct kinds of files every time. Trash-Guides put together multiple flow charts on what custom formats to use in certain situations which can be found here\nI am going to put my logic behind how I have my setup configured, although you should review this Trash-Guide for more details.\n1080P: *Not Shown custom format scores\n3D:-10000 BR-DISK:-10000 Bad Dual Groups:-10000 EVO (no WEBDL):-10000 LQ (Release Title):-10000 x265 (HD):-10000 (This is Trash-Guides Golden Rule, 1080p=x264 | 4k=x265) Not much logic here other than not getting crappy releases and only downloading x264 if its 1080P. File size limits can be put to get smaller files. I just follow this.\nI want x264 as its gonna have the highest compatibility with the most devices and the less transcoding I need to do the better.\n4K: I have a 4K TV with Dolby Vision Support, along with a Dolby Atmos sound system. So making sure my 4K files have Dolby Vision is pretty important, also having the extended screen of IMAX on a home sized TV is amazing. Having both of those together is the perfect recipe IMO, yet not all movies support one or the other so not as common as you may think. But generally if I want something 4K it will have DV support. I read on trash guides that if you have DV files without DV HDR10 as a fallback, the video will appear off-color to TVs that don’t have DV. So I try to make sure DV with HDR10 fallback is 1st. File size is not taken into consideration at all, I have multiple ~90GB movies.\nAlso if your TV doesn’t have DV support, get one. In my experience the difference between HDR10/10+ and DV is night and day. And I usually am not a fan of proprietary software at all. The next best if you don’t have DV is HDR10+. But ultimately having any HDR is gonna be better than SDR.\nI ended up removing the Atmos custom format as most of the time the insane high quality files will have Atmos, and it could just be my setup but I don’t notice too much a difference between DD+ and Atmos.\nConclusion With all this done you should be able to a add a new movie and watch it download over in Sab. Then when finished downloading it should be automatically moved to your target directory.\nTips If you ever find a file that works well and you don’t want Radarr to mess with it, unmonitor it. That way Radarr doesn’t upgrade it. If you are brand new to Radarr I would learn the basics of it in the web-ui, then proceed to utilizing the API with apps like Nzb360, LunaSea, and Overseerr/Jellyseerr to request stuff with a better front end. There’s even Doplarr the Discord bot. Say you found a specific version of a movie, but the audio is bad or a different language, and you can’t find another video quality the same, you can use a tool called mkvtoolnix to merge audio tracks from one file to another’s video track. You will probably run into this at some point if you’re really looking for something specific. You can manually import Boxing/WWE/UFC events into Radarr and the metadata will apply, but searching in Radarr doesn’t work for these types of events. Manually finding the NZB’s or torrents and moving files seems to be only way. Sonarr Initial Setup Sonarr is Radarr but for TV Shows.\nFirst thing load up Sonarr on your web browser at http://{IP_ADDRESS}:8989 .\nMake an account. Then do the same thing as Radarr and add a new root folder if starting new, or import your existing media. The root folder location should be /data/media/tv\nThen we need to connect Sab to Sonarr, to do this Go to Settings - Download Clients - Add just like we did with Radarr, fill in all your Sab details.\nCustom Formats Again all these custom formats are on trash-guides. Link here. I just picked all major streaming services and the Tier’s. Import them the same way you did Radarr.\nQuality Profile Go to Settings - Profiles - Quality Profiles *Not Shown custom format scores\nx265 (HD):-10000 BR-DISK:-10000 I only have this 1 1080p profile as I personally do not want to waste that storage space on a long TV series. I do not have any 4K TV shows at all. This generally always grabs the best available file. Again for Size Limit I follow this trash-guide.\nHaving x265(HD) as -10000 means it will not download a 1080p file if it is encoded in x265, again this is for compatibility as x264 just works on more devices.\nNaming Files I also rename Sonarr’s files, to do this go to Settings - Media Management - check Rename Episodes and under Standard Episode format set:\n{Series TitleYear} - S{season:00}E{episode:00} - {Episode CleanTitle} [{Custom Formats }{Quality Full}]{[MediaInfo VideoDynamicRangeType]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoCodec]}{-Release Group} Make sure you save changes.\nTips Don’t download a whole series at once if it has many seasons, you may fill up on space on your VM. Which will stop everything on that VM. Usually they download faster than they transfer to target directory. So space can add up quick. I usually do 2-3 seasons at a time. Bazarr Bazarr is used to get subtitles for all your content. Sometimes the files come with subtitle tracks, Bazarr covers you when they don’t.\nInitial Setup First thing load up Bazarr on your web browser at http://{IP_ADDRESS}:6767 .\nFirst thing is to set your language, go to Settings - Languages - Languages Filter and set the filter to your language. I set to English.\nThen under Language Profiles click Add New Profile:\nName: English Click Add Language, english should pop up by default. Set the cutoff to en Save At the bottom of this page there is Default Settings, check both boxes for Series and Movies and choose your language profile.\nProviders Under Settings - Providers - Add a Provider:\nYIFY, TVSubtitles, Supersubtitles, are all free and dont require an account.\nopensubtitles.com requires you to create an account first but is free.\nI have a OpenAI whisper model running on a separate VM which uses my GPU and AI to generate subtitles for content as well, And its pretty good even with the base model. It’s rarely needed as usually I find better subtitles thru another provider first with a higher score. But for those times when subtitles can’t be found its nice they can be generated. I found this in Bazarr’s docs.\nMake sure you save your changes.\nConnecting Bazarr to Radarr/Sonarr Now you just need to tell Bazarr where your arr’s are located. Go to Settings - Sonarr for Sonarr and Settings - Radarr for Radarr. Filling in all your details and saving.\nConclusion Congrats you now have a fully automated backend for downloading media! Good time to cancel those 10 streaming subscriptions and start downloading what you wanna watch. There’s not many guides out there about this sort of thing, as piracy leaves some ethical concerns. But idrc, I’ve been a pirate my whole life, the fact that you can make a system like this all for way cheaper than streaming services is mind-blowing to me.\nNow just hook up Jellyfin/Plex up to you /data/media directory and start watching with no ads!\nIf you found this guide useful you can always BuyMeACoffee!\n",
+  "wordCount" : "2716",
+  "inLanguage": "en",
+  "datePublished": "2024-02-25T00:13:40Z",
+  "dateModified": "2024-02-25T00:13:40Z",
+  "author":{
+    "@type": "Person",
+    "name": "Matt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mafyuh.com/posts/arr-stack-config-guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mafyuh's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mafyuh.com/assets/favicon/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://mafyuh.com/" accesskey="h" title="Mafyuh&#39;s Blog (Alt + H)">
+                <img src="https://mafyuh.com/assets/favicon/favicon.svg" alt="" aria-label="logo"
+                    height="35">Mafyuh&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://mafyuh.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://mafyuh.com/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://mafyuh.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://mafyuh.com/">Home</a>&nbsp;»&nbsp;<a href="https://mafyuh.com/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Configuring Arr Stack
+    </h1>
+    <div class="post-meta"><span title='2024-02-25 00:13:40 +0000 UTC'>February 25, 2024</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;2716 words&nbsp;·&nbsp;Matt
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prowlarr">Prowlarr</a>
+      <ul>
+        <li><a href="#indexers">Indexers</a></li>
+        <li><a href="#usenet-vs-torrenting">Usenet vs Torrenting</a></li>
+        <li><a href="#connecting-prowlarr-to-radarrsonarr">Connecting Prowlarr to Radarr/Sonarr</a></li>
+      </ul>
+    </li>
+    <li><a href="#sabnzbd">Sabnzbd</a>
+      <ul>
+        <li><a href="#providers">Providers</a></li>
+        <li><a href="#folders">Folders</a></li>
+      </ul>
+    </li>
+    <li><a href="#radarr">Radarr</a>
+      <ul>
+        <li><a href="#initial-setup">Initial Setup</a></li>
+        <li><a href="#connect-sab-to-radarr">Connect Sab to Radarr</a></li>
+        <li><a href="#naming-files">Naming Files</a></li>
+        <li><a href="#custom-formats">Custom Formats</a></li>
+        <li><a href="#quality-profiles">Quality Profiles</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#sonarr">Sonarr</a>
+      <ul>
+        <li><a href="#initial-setup-1">Initial Setup</a></li>
+        <li><a href="#custom-formats-1">Custom Formats</a></li>
+        <li><a href="#quality-profile">Quality Profile</a></li>
+        <li><a href="#naming-files-1">Naming Files</a></li>
+        <li><a href="#tips-1">Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#bazarr">Bazarr</a>
+      <ul>
+        <li><a href="#initial-setup-2">Initial Setup</a></li>
+        <li><a href="#providers-1">Providers</a></li>
+        <li><a href="#connecting-bazarr-to-radarrsonarr">Connecting Bazarr to Radarr/Sonarr</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-1">Conclusion</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to <a href="https://trash-guides.info/">TRaSH-Guides</a> often in this post. It&rsquo;s like the bible of the Arr&rsquo;s so I would look there for more options, especially if your setup differs from mine.</p>
+<h1 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h1>
+<ul>
+<li>Any Usenet Server Subscription (preferred)</li>
+<li>Any Usenet Indexer Subscription (preferred)</li>
+<li>Real-Debrid Subscription (if you like torrents being fast)</li>
+<li>VPN Subscription (Bare minimum needed to download torrents)</li>
+</ul>
+<h1 id="configuration">Configuration<a hidden class="anchor" aria-hidden="true" href="#configuration">#</a></h1>
+<h2 id="prowlarr">Prowlarr<a hidden class="anchor" aria-hidden="true" href="#prowlarr">#</a></h2>
+<p>We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it&rsquo;s the part where you&rsquo;re gonna spend some $</p>
+<p>1st thing to do is load up your web browser and go to Prowlarr. In your URL bar put http://{IP-ADDRESS}:9696.</p>
+<p>You should be prompted to create an account. It doesn’t matter much if you choose Basic or Forms for authentication.</p>
+<p>This guide is just going to be using Usenet, as I recommend it over torrenting.</p>
+<p>Prowlarr&rsquo;s job is to search thru all the indexers and return those results over to Radarr/Sonarr.</p>
+<h3 id="indexers">Indexers<a hidden class="anchor" aria-hidden="true" href="#indexers">#</a></h3>
+<p>You can find links to all the indexers out there on this Usenet <a href="https://www.reddit.com/r/usenet/wiki/indexers/">subreddit</a>. I will provide a screenshot of my Indexers list:</p>
+<p><img loading="lazy" src="/assets/img/indexer-list.png" alt="Indexer List"  />
+</p>
+<p>I would say the most downloaded stuff I have is from NZBgeek, followed by DrunkenSlug then NZBFinder. If I were to only be able to have 1 it would be NZBgeek for sure.</p>
+<p>Sign up for whatever service you want, once you pay they should give you your API key, usually under profile on the indexer website. Take that API over to Prowlarr and you should be able to select your indexer from the list, paste in your API key and save. You can also click on the wrench icon next to the indexer and set your VIP expiration date, so Prowlarr reminds you to renew.</p>
+<p>I paid for as lifetime altHUB account as well as yearly for Slug and Geek, A lot of the others that are under Interactive Search Sync Profile are free accounts that they limit the amount of API hits per day. You can tell Prowlarr this to by setting up Sync Profiles like I have so it doesn&rsquo;t burn your API hits fast. <a href="https://trash-guides.info/Prowlarr/prowlarr-setup-limited-api/">Link</a></p>
+<p>Thats pretty much it for indexers, now you just need a provider which is covered in the Sabnzbd portion.</p>
+<h3 id="usenet-vs-torrenting">Usenet vs Torrenting<a hidden class="anchor" aria-hidden="true" href="#usenet-vs-torrenting">#</a></h3>
+<p>Usenet wins all day IMO. I started off with torrenting years ago and there would always be something I couldn&rsquo;t find. Once I found usenet that problem went away and hasn&rsquo;t returned. I still have a Real-Debrid subscription, however I am not planning on renewing when it runs up as I just don&rsquo;t need torrents anymore for media. The only exception being PPV fights, which at least with the indexers I use, I cant find much on usenet. Usenet grabs about 95% of what I need. And I&rsquo;m sure the other 5% would have still been found, but torrent won the algorithm battle. You also do not need to use a VPN when using Usenet as all big providers use HTTPS.</p>
+<p>If you are new to Usenet, their <a href="https://www.reddit.com/r/usenet/wiki/index/">subreddit</a> wiki will help you out. Unlike torrenting which is peer to peer and fully decentralized, usenet is more centralized and has many servers that host the content (Providers). There is a monthly fee for being able to access these servers. You also need an indexer in order to find NZB files, which is then sent to your provider for downloading. Indexers are much cheaper at usually a few bucks a year.</p>
+<h3 id="connecting-prowlarr-to-radarrsonarr">Connecting Prowlarr to Radarr/Sonarr<a hidden class="anchor" aria-hidden="true" href="#connecting-prowlarr-to-radarrsonarr">#</a></h3>
+<p>For now skip to setting up Radarr and Sonarr, after setting up you will need their API keys which can be found under <strong>Settings - General - API Key</strong>.</p>
+<p>In Prowlarr go to <strong>Settings - Apps - Create an application</strong> and click Radarr, filling in all api key and changing the host if needed. Do the same thing for Sonarr. This automatically syncs all your indexers into Radarr/Sonarr and if you want to add more indexers you just have to add it in Prowlarr and not 2 separate places.</p>
+<h2 id="sabnzbd">Sabnzbd<a hidden class="anchor" aria-hidden="true" href="#sabnzbd">#</a></h2>
+<p>Sab is what connects to our Usenet providers and downloads the NZB files that Radarr/Sonarr gave to it.</p>
+<p>First load up sab at http://{IP_ADDRESS}:8080 . One of the first things it has you do is enter you server details, which takes us into providers.</p>
+<h3 id="providers">Providers<a hidden class="anchor" aria-hidden="true" href="#providers">#</a></h3>
+<p>These are the costliest part of the process, although for good reason. There are a bunch of providers out there, which all can be found <a href="https://www.reddit.com/r/usenet/wiki/providers/">here</a>.</p>
+<p>I have used Newshosting, NewsDemon and UsenetNow. You only need 1 of these to download most stuff, but I prefer to have 2 as I have seen some servers don&rsquo;t have a file that another one did. It&rsquo;s rare but happens. As of the time of me writing this I am using UsenetNow for $6/month and Newsdemon $50 for 12 months using this <a href="https://members.newsdemon.com/billinginfo.php?pricepointid=20230413">link</a> (Not referral just found a promo link on Reddit I saved)</p>
+<p>Once you select your provider and pay, they should email you your login credentials that you just put into Sab. Remember to set the connections to whatever your provider allows to maximize download speeds.</p>
+<h3 id="folders">Folders<a hidden class="anchor" aria-hidden="true" href="#folders">#</a></h3>
+<p>All we really need to do to configure Sab is to set the Temp and Completed Download folders.
+For Temporary:</p>
+<pre tabindex="0"><code>/data/usenet/incomplete
+</code></pre><p>and for complete:</p>
+<pre tabindex="0"><code>/data/usenet/complete
+</code></pre><p>Make sure you save changes.</p>
+<h2 id="radarr">Radarr<a hidden class="anchor" aria-hidden="true" href="#radarr">#</a></h2>
+<h3 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h3>
+<p>1st thing to do is load up your web browser and go to Radarr. In your URL bar put http://{IP-ADDRESS}:7878 .</p>
+<p>Putting in the IP of you Ubuntu machine. If you are using something like WSL just use localhost as IP.</p>
+<p>You should be prompted to create an account. It doesn&rsquo;t matter much if you choose Basic or Forms for authentication.</p>
+<p>If you are starting fresh with no content, go to <strong>Settings - Media Management - Root Folders</strong> and add a root folder, you can use the movies folder that was located at /data/media/movies or you can go into /data/media and name your folders however you want to.</p>
+<p>My media directory breaks down the movies by category: 4K, Movies, Marvel, DC, Kids, Stand-Up, Requested Content and Fights. They are added to Radarr individually as follows:</p>
+<p><img loading="lazy" src="/assets/img/radarr-rootfolder.png#center" alt="Root Folders"  />
+</p>
+<p>If you already have media you want to import into Radarr, click <strong>Movies - Library Import - Start Import</strong>. Remember all you files are going to be under /data/media if you followed my installation guide. This also adds the chosen directory as a root folder.</p>
+<h3 id="connect-sab-to-radarr">Connect Sab to Radarr<a hidden class="anchor" aria-hidden="true" href="#connect-sab-to-radarr">#</a></h3>
+<p>To connect Sab to Radarr, in Radarr go to <strong>Settings - Download Clients</strong> - add - Sabnzbd - fill in all your Sab details, getting the API key from <strong>Sab - General - Api Key</strong> (Not NZB Key)</p>
+<h3 id="naming-files">Naming Files<a hidden class="anchor" aria-hidden="true" href="#naming-files">#</a></h3>
+<p>It&rsquo;s best practice to rename your files, Radarr does this automatically for you. To do this go to <strong>Settings - Media Management - Movie Naming</strong>. Make sure you check the Rename Movies checkbox. Everything should be fine by default besides Standard Movie Format, Jellyfin recommends this:</p>
+<pre tabindex="0"><code>{Movie CleanTitle} {(Release Year)} [imdbid-{ImdbId}] - {Edition Tags }{[Custom Formats]}{[Quality Full]}{[MediaInfo 3D]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}[{Mediainfo VideoCodec}]{-Release Group}
+</code></pre><p>Make sure you hit save. Note this only automatically renames the file if it was downloaded from Radarr, if you imported your own media you need to manually click rename files under <strong>Movies</strong> - Click Edit Movies - Select All - Rename Files on bottom of screen.</p>
+<h3 id="custom-formats">Custom Formats<a hidden class="anchor" aria-hidden="true" href="#custom-formats">#</a></h3>
+<p>Every single one of these custom formats is from trash-guides, you can see how to import them <a href="https://trash-guides.info/Radarr/Radarr-import-custom-formats/">here</a>.
+<img loading="lazy" src="/assets/img/radarr-customformats.png" alt="Custom Formats"  />
+</p>
+<p>Add all custom formats that you want to look out for, whether good or bad. What custom formats do is essentially put a label on files just based off the files name, as well as provide these labels a score which is used when auto-searching for a movie. Just adding custom formats on it&rsquo;s own does nothing, setting up a Quality profile to rank these custom formats is how we pick and choose what we want. Reading through trash guides will yield good results.</p>
+<h3 id="quality-profiles">Quality Profiles<a hidden class="anchor" aria-hidden="true" href="#quality-profiles">#</a></h3>
+<p>Now you need to ask yourself what your plan here is, do you want the highest possible quality content with no regards to storage space? Do you want a giant library filled with lower quality content? Do you have a 4K TV? Do you have HDR/HDR10/Dolby Vision on your TV? Do you have a Dolby Atmos system and want the top notch audio? What about the people you maybe plan on sharing these files with, do you know their TV&rsquo;s capabilities? Are you gonna be using Plex or Jellyfin to stream this media?</p>
+<p>You should consider all these things when setting this up so you don&rsquo;t have to manually search for files. That&rsquo;s the point of this whole section is to automate the searching process and find the correct kinds of files every time. Trash-Guides put together multiple flow charts on what custom formats to use in certain situations which can be found <a href="https://trash-guides.info/Radarr/radarr-setup-quality-profiles/#which-quality-profile-should-you-choose">here</a></p>
+<p>I am going to put my logic behind how I have my setup configured, although you should review <a href="https://trash-guides.info/Radarr/radarr-setup-quality-profiles/">this Trash-Guide</a> for more details.</p>
+<p>1080P:
+<img loading="lazy" src="/assets/img/hd-radarr.png" alt="1080p Quality Profile"  />
+
+*Not Shown custom format scores</p>
+<ul>
+<li>3D:-10000</li>
+<li>BR-DISK:-10000</li>
+<li>Bad Dual Groups:-10000</li>
+<li>EVO (no WEBDL):-10000</li>
+<li>LQ (Release Title):-10000</li>
+<li>x265 (HD):-10000 (This is Trash-Guides Golden Rule, 1080p=x264 | 4k=x265)</li>
+</ul>
+<p>Not much logic here other than not getting crappy releases and only downloading x264 if its 1080P. File size limits can be put to get smaller files. I just follow <a href="https://trash-guides.info/Radarr/Radarr-Quality-Settings-File-Size/">this</a>.</p>
+<p>I want x264 as its gonna have the highest compatibility with the most devices and the less transcoding I need to do the better.</p>
+<p>4K:
+<img loading="lazy" src="/assets/img/4k-radarr.png" alt="4K Quality Profile"  />
+
+<img loading="lazy" src="/assets/img/4k-radarr-2.png#center" alt="4k Radarr 2"  />
+</p>
+<p>I have a 4K TV with Dolby Vision Support, along with a Dolby Atmos sound system. So making sure my 4K files have Dolby Vision is pretty important, also having the extended screen of IMAX on a home sized TV is amazing. Having both of those together is the perfect recipe IMO, yet not all movies support one or the other so not as common as you may think. But generally if I want something 4K it will have DV support. I read on trash guides that if you have DV files without DV HDR10 as a fallback, the video will appear off-color to TVs that don&rsquo;t have DV. So I try to make sure DV with HDR10 fallback is 1st. File size is not taken into consideration at all, I have multiple ~90GB movies.</p>
+<p>Also if your TV doesn&rsquo;t have DV support, get one. In my experience the difference between HDR10/10+ and DV is night and day. And I usually am not a fan of proprietary software at all. The next best if you don&rsquo;t have DV is HDR10+. But ultimately having any HDR is gonna be better than SDR.</p>
+<p>I ended up removing the Atmos custom format as most of the time the insane high quality files will have Atmos, and it could just be my setup but I don&rsquo;t notice too much a difference between DD+ and Atmos.</p>
+<h3 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h3>
+<p>With all this done you should be able to a add a new movie and watch it download over in Sab. Then when finished downloading it should be automatically moved to your target directory.</p>
+<h3 id="tips">Tips<a hidden class="anchor" aria-hidden="true" href="#tips">#</a></h3>
+<ol>
+<li>If you ever find a file that works well and you don&rsquo;t want Radarr to mess with it, unmonitor it. That way Radarr doesn&rsquo;t upgrade it.</li>
+<li>If you are brand new to Radarr I would learn the basics of it in the web-ui, then proceed to utilizing the API with apps like <a href="https://nzb360.com/">Nzb360</a>, <a href="https://www.lunasea.app/">LunaSea</a>, and <a href="https://overseerr.dev/">Overseerr</a>/<a href="https://github.com/Fallenbagel/jellyseerr">Jellyseerr</a> to request stuff with a better front end. There&rsquo;s even <a href="https://docs.linuxserver.io/images/docker-doplarr/#application-setup">Doplarr</a> the Discord bot.</li>
+<li>Say you found a specific version of a movie, but the audio is bad or a different language, and you can&rsquo;t find another video quality the same, you can use a tool called <a href="https://mkvtoolnix.download/">mkvtoolnix</a> to merge audio tracks from one file to another&rsquo;s video track. You will probably run into this at some point if you&rsquo;re really looking for something specific.</li>
+<li>You can manually import Boxing/WWE/UFC events into Radarr and the metadata will apply, but searching in Radarr doesn&rsquo;t work for these types of events. Manually finding the NZB&rsquo;s or torrents and moving files seems to be only way.</li>
+</ol>
+<h2 id="sonarr">Sonarr<a hidden class="anchor" aria-hidden="true" href="#sonarr">#</a></h2>
+<h3 id="initial-setup-1">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup-1">#</a></h3>
+<p>Sonarr is Radarr but for TV Shows.</p>
+<p>First thing load up Sonarr on your web browser at http://{IP_ADDRESS}:8989 .</p>
+<p>Make an account. Then do the same thing as Radarr and add a new root folder if starting new, or import your existing media. The root folder location should be /data/media/tv</p>
+<p>Then we need to connect Sab to Sonarr, to do this Go to <strong>Settings - Download Clients - Add</strong> just like we did with Radarr, fill in all your Sab details.</p>
+<h3 id="custom-formats-1">Custom Formats<a hidden class="anchor" aria-hidden="true" href="#custom-formats-1">#</a></h3>
+<p>Again all these custom formats are on trash-guides. Link <a href="https://trash-guides.info/Sonarr/sonarr-collection-of-custom-formats/">here</a>.
+<img loading="lazy" src="/assets/img/sonarr-cf.png" alt="Sonarr Custom Format"  />
+
+I just picked all major streaming services and the Tier&rsquo;s. Import them the same way you did Radarr.</p>
+<h3 id="quality-profile">Quality Profile<a hidden class="anchor" aria-hidden="true" href="#quality-profile">#</a></h3>
+<p>Go to <strong>Settings - Profiles - Quality Profiles</strong>
+<img loading="lazy" src="/assets/img/sonarr-1080p.png" alt="Sonarr 1080"  />
+
+*Not Shown custom format scores</p>
+<ul>
+<li>x265 (HD):-10000</li>
+<li>BR-DISK:-10000</li>
+</ul>
+<p>I only have this 1 1080p profile as I personally do not want to waste that storage space on a long TV series. I do not have any 4K TV shows at all. This generally always grabs the best available file. Again for Size Limit I follow <a href="https://trash-guides.info/Sonarr/Sonarr-Quality-Settings-File-Size/">this trash-guide</a>.</p>
+<p>Having x265(HD) as -10000 means it will not download a 1080p file if it is encoded in x265, again this is for compatibility as x264 just works on more devices.</p>
+<h3 id="naming-files-1">Naming Files<a hidden class="anchor" aria-hidden="true" href="#naming-files-1">#</a></h3>
+<p>I also rename Sonarr&rsquo;s files, to do this go to <strong>Settings - Media Management</strong> - check Rename Episodes and under Standard Episode format set:</p>
+<pre tabindex="0"><code>{Series TitleYear} - S{season:00}E{episode:00} - {Episode CleanTitle} [{Custom Formats }{Quality Full}]{[MediaInfo VideoDynamicRangeType]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoCodec]}{-Release Group}
+</code></pre><p>Make sure you save changes.</p>
+<h3 id="tips-1">Tips<a hidden class="anchor" aria-hidden="true" href="#tips-1">#</a></h3>
+<ol>
+<li>Don&rsquo;t download a whole series at once if it has many seasons, you may fill up on space on your VM. Which will stop everything on that VM. Usually they download faster than they transfer to target directory. So space can add  up quick. I usually do 2-3 seasons at a time.</li>
+</ol>
+<h2 id="bazarr">Bazarr<a hidden class="anchor" aria-hidden="true" href="#bazarr">#</a></h2>
+<p>Bazarr is used to get subtitles for all your content. Sometimes the files come with subtitle tracks, Bazarr covers you when they don&rsquo;t.</p>
+<h3 id="initial-setup-2">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup-2">#</a></h3>
+<p>First thing load up Bazarr on your web browser at http://{IP_ADDRESS}:6767 .</p>
+<p>First thing is to set your language, go to <strong>Settings - Languages - Languages Filter</strong> and set the filter to your language. I set to English.</p>
+<p>Then under Language Profiles click Add New Profile:</p>
+<ul>
+<li>Name: English</li>
+<li>Click Add Language, english should pop up by default.</li>
+<li>Set the cutoff to en</li>
+<li>Save</li>
+</ul>
+<p>At the bottom of this page there is Default Settings, check both boxes for Series and Movies and choose your language profile.</p>
+<h3 id="providers-1">Providers<a hidden class="anchor" aria-hidden="true" href="#providers-1">#</a></h3>
+<p>Under <strong>Settings - Providers</strong> - Add a Provider:</p>
+<p><img loading="lazy" src="/assets/img/bazarr-prov.png" alt="Bazarr Providers"  />
+</p>
+<p>YIFY, TVSubtitles, Supersubtitles, are all free and dont require an account.</p>
+<p>opensubtitles.com requires you to create an account first but is free.</p>
+<p>I have a OpenAI whisper model running on a separate VM which uses my GPU and AI to generate subtitles for content as well, And its pretty good even with the base model. It&rsquo;s rarely needed as usually I find better subtitles thru another provider first with a higher score. But for those times when subtitles can&rsquo;t be found its nice they can be generated. I found <a href="https://wiki.bazarr.media/Additional-Configuration/Whisper-Provider/">this</a> in Bazarr&rsquo;s docs.</p>
+<p>Make sure you save your changes.</p>
+<h3 id="connecting-bazarr-to-radarrsonarr">Connecting Bazarr to Radarr/Sonarr<a hidden class="anchor" aria-hidden="true" href="#connecting-bazarr-to-radarrsonarr">#</a></h3>
+<p>Now you just need to tell Bazarr where your arr&rsquo;s are located. Go to <strong>Settings - Sonarr</strong> for Sonarr and <strong>Settings - Radarr</strong> for Radarr. Filling in all your details and saving.</p>
+<h2 id="conclusion-1">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-1">#</a></h2>
+<p>Congrats you now have a fully automated backend for downloading media! Good time to cancel those 10 streaming subscriptions and start downloading what you wanna watch. There&rsquo;s not many guides out there about this sort of thing, as piracy leaves some ethical concerns. But idrc, I&rsquo;ve been a pirate my whole life, the fact that you can make a system like this all for way cheaper than streaming services is mind-blowing to me.</p>
+<p>Now just hook up Jellyfin/Plex up to you /data/media directory and start watching with no ads!</p>
+<p>If you found this guide useful you can always <a href="https://www.buymeacoffee.com/mafyuhh">BuyMeACoffee</a>!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://mafyuh.com/tags/homelab/">Homelab</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://mafyuh.com/posts/spl-token-cli/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>How to create a Solana Token (SPL) from CLI with metadata</span>
+  </a>
+  <a class="next" href="https://mafyuh.com/posts/docker-arr-stack-guide/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Docker Compose Arr Stack Guide</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="Mafyuh/mafyuh.com"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://mafyuh.com/">Mafyuh&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

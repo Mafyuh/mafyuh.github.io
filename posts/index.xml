@@ -16,6 +16,14 @@
       <description>I wanted to create an SPL token and after looking online I couldn&amp;rsquo;t find an updated guide. I mainly just found Keyglowmax (SCAM). So I thought I would learn and share. There are much easier ways to create these tokens but they cost $ and spending more $ than needed is no fun. They also have you connect your wallet which is enough of a worry. This guide costs as little SOL as possible as everything is transacted directly on-chain.</description>
     </item>
     <item>
+      <title>Configuring Arr Stack</title>
+      <link>https://mafyuh.com/posts/arr-stack-config-guide/</link>
+      <pubDate>Sun, 25 Feb 2024 00:13:40 +0000</pubDate>
+      <guid>https://mafyuh.com/posts/arr-stack-config-guide/</guid>
+      <description>This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to TRaSH-Guides often in this post. It&amp;rsquo;s like the bible of the Arr&amp;rsquo;s so I would look there for more options, especially if your setup differs from mine.
+Prerequisites Any Usenet Server Subscription (preferred) Any Usenet Indexer Subscription (preferred) Real-Debrid Subscription (if you like torrents being fast) VPN Subscription (Bare minimum needed to download torrents) Configuration Prowlarr We will first start with Prowlarr and Sabnzbd to get all of this out of the way, and it&amp;rsquo;s the part where you&amp;rsquo;re gonna spend some $</description>
+    </item>
+    <item>
       <title>Docker Compose Arr Stack Guide</title>
       <link>https://mafyuh.com/posts/docker-arr-stack-guide/</link>
       <pubDate>Fri, 23 Feb 2024 00:13:40 +0000</pubDate>
