@@ -33,6 +33,7 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: false
+  social: true
   socialIcons:
     - name: reddit
       url: "https://reddit.com/user/Mafyuh"
