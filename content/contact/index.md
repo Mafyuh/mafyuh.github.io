@@ -15,4 +15,4 @@ Got questions, feedback, or just want to say hi? Feel free to reach out to me us
 
 If you're interested in my professional experience, you can download my resume below:
 
-- [Download Resume](link-to-resume.pdf)
+- [Download Resume](/assets/img/resume.pdf)

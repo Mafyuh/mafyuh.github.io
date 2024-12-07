@@ -40,6 +40,8 @@ params:
       url: "https://git.mafyuh.dev"
     - name: github
       url: "https://github.com/Mafyuh"
+    - name: buymeacoffee
+      url: "https://www.buymeacoffee.com/mafyuhh"
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
@@ -64,7 +66,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Mafyuh
-    subtitle: "Selfhoster - Junior Web Developer"
+    subtitle: "Selfhoster - Jr. DevOps Engineer"
     imageUrl: "/assets/favicon/favicon.svg"
     imageWidth: 120
     imageHeight: 120
