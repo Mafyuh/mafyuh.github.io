@@ -56,7 +56,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           TZ: America/New_York
         run: |
-          hugo \
+          hugo -t PaperMod\
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
