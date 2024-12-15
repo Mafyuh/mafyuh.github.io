@@ -10,5 +10,3 @@ showToc = false
 
 ## Here is Text
 
-
-![[Pasted image 20241215154110.png]]

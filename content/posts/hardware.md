@@ -21,7 +21,7 @@ Most of my infrastructure is hosted on my in-lab Proxmox server, along with a fe
 
 ## Gaming PC 
 
-![Gaming PC](/assets/img/gamingpc.jpg)
+![Gaming PC](/images/gamingpc.jpg)
 
 - CPU: Intel Core i7-13700K
 - GPU: Nvidia GeForce RTX 3080
