@@ -1,7 +1,7 @@
 ---
 slug: obsidian-test
 title: Obsidian Test Post
-date: 
+date: 2024-12-15T18:25:00
 description: ""
 draft: false
 comments: true
@@ -14,8 +14,7 @@ showtoc: true
 tocopen: true
 UseHugoToc: false
 robotsNoIndex: false
-tags: 
-  - ""
+tags:
 ---
 
 ## Here is Text
