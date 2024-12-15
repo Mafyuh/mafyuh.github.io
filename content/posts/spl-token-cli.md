@@ -1,13 +1,14 @@
-+++
-date = 2024-03-15T00:13:40Z
-description = ""
-draft = false
-slug = "spl-token-cli"
-title = "How to create a Solana Token (SPL) from CLI with metadata"
-tags = ["Homelab"]
-comments = true
-ShowPostNavLinks = false
-+++
+---
+date: 2024-03-15T00:13:40Z
+description: ""
+draft: false
+slug: "spl-token-cli"
+title: "How to create a Solana Token (SPL) from CLI with metadata"
+tags: 
+  - "Homelab"
+comments: true
+ShowPostNavLinks: false
+---
 
 I wanted to create an SPL token and after looking online I couldn't find an updated guide. I mainly just found Keyglowmax (SCAM). So I thought I would learn and share. There are much easier ways to create these tokens but they cost $ and spending more $ than needed is no fun. They also have you connect your wallet which is enough of a worry. This guide costs as little SOL as possible as everything is transacted directly on-chain. Everything is done from the CLI.
 

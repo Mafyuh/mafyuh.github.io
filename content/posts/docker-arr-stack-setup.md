@@ -1,12 +1,14 @@
-+++
-date = 2024-02-23T00:13:40Z
-description = ""
-draft = false
-slug = "docker-arr-stack-guide"
-title = "Docker Compose Arr Stack Guide"
-tags = ["Homelab"]
-comments = true
-+++
+---
+date: 2024-02-23T00:13:40Z
+description: ""
+draft: false
+slug: "docker-arr-stack-guide"
+title: "Docker Compose Arr Stack Guide"
+tags: ["Homelab"]
+comments: true
+showtoc: true
+tocopen: true
+---
 
 This guide is for someone who is looking to setup an Arr Stack for media organization and downloading. This guide requires no remote path mappings, follows Trash-Guides recommendations and every command needed is copy-pasteable. The VM's in this guide are hosted on Proxmox 8.2.2, but you can use any Ubuntu environment (WSL-2, VirtualBox, etc.)
 

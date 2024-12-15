@@ -1,12 +1,12 @@
-+++
-date = 2023-08-25T00:13:40Z
-description = ""
-draft = false
-slug = "hardware"
-tags = ["Homelab"]
-title = "Hardware"
-
-+++
+---
+date: 2023-08-25T00:13:40Z
+description: ""
+draft: false
+slug: "hardware"
+tags: 
+  - "Homelab"
+title: "Hardware"
+---
 
 Most of my infrastructure is hosted on my in-lab Proxmox server, along with a few new machines for dedicated services. Here are some of the specs of some of the in-lab machines.
 

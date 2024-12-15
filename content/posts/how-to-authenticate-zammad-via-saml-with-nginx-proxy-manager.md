@@ -1,13 +1,13 @@
-+++
-date = 2023-10-29T16:20:00Z
-description = ""
-draft = false
-slug = "how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager"
-title = "How to authenticate Zammad via SAML with Nginx Proxy Manager"
-tags = ["authentik"]
-showToc = false
-+++
-
+---
+date: 2023-10-29T16:20:00Z
+description: ""
+draft: false
+slug: "how-to-authenticate-zammad-via-saml-with-nginx-proxy-manager"
+title: "How to authenticate Zammad via SAML with Nginx Proxy Manager"
+tags: 
+  - "authentik"
+showtoc: false
+---
 
 If you are getting error messages like:
 

@@ -1,12 +1,15 @@
-+++
-date = 2024-02-25T00:13:40Z
-description = ""
-draft = false
-slug = "arr-stack-config-guide"
-title = "Configuring Arr Stack"
-tags = ["Homelab"]
-comments = true
-+++
+---
+date: 2024-02-25T00:13:40Z
+description: ""
+draft: false
+slug: "arr-stack-config-guide"
+title: "Configuring Arr Stack"
+showtoc: true
+tocopen: true
+tags:
+  - "Homelab"
+comments: true
+---
 
 This is blog post 2/2 on setting up a Arr stack using docker. This post will touch on configuring these services and what I have learned when using these services. I will be referring to [TRaSH-Guides](https://trash-guides.info/) often in this post. It's like the bible of the Arr's so I would look there for more options, especially if your setup differs from mine.
 

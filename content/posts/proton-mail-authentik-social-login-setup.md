@@ -1,12 +1,13 @@
-+++
-date = 2023-11-12T16:20:00Z
-description = ""
-draft = false
-slug = "proton-mail-authentik-social-login-setup"
-title = "Proton Mail - SimpleLogin authentik Social Login Setup"
-tags = ["authentik"]
-showToc = false
-+++
+---
+date: 2023-11-12T16:20:00Z
+description: ""
+draft: false
+slug: "proton-mail-authentik-social-login-setup"
+title: "Proton Mail - SimpleLogin authentik Social Login Setup"
+tags: 
+  - "authentik"
+showtoc: false
+---
 
 This is just a quick guide on how to authenticate your authentik users with Proton using SimpleLogin OIDC.
 

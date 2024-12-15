@@ -1,13 +1,13 @@
-+++
-date = 2023-08-26T00:13:40Z
-description = ""
-draft = false
-slug = "software"
-tags = ["Homelab"]
-title = "Software"
-showToc = false
-+++
-
+---
+date: 2023-08-26T00:13:40Z
+description: ""
+draft: false
+slug: "software"
+tags: 
+  - "Homelab"
+title: "Software"
+showToc: false
+---
 
 Just a straight forward list of pretty much everything that makes up my homelab. Or systems I've ran in the past.
 

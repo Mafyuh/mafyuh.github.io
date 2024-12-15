@@ -1,13 +1,13 @@
-+++
-date = 2024-02-06T02:58:07Z
-description = ""
-draft = false
-slug = "resize-ubuntu-vm-disk"
-title = "Resize Ubuntu VM Disk in Proxmox"
-tags = ["Ubuntu"]
-showToc = false
-+++
-
+---
+date: 2024-02-06T02:58:07Z
+description: ""
+draft: false
+slug: "resize-ubuntu-vm-disk"
+title: "Resize Ubuntu VM Disk in Proxmox"
+tags: 
+  - "Ubuntu"
+showToc: false
+---
 
 # 1st step: Increase/resize disk from GUI console
 
