@@ -11,7 +11,7 @@ showToc = false
 
 # 1st step: Increase/resize disk from GUI console
 
-![Proxmox webui change](/assets/img/prox-resize.png#center)
+![Proxmox webui change](/images/prox-resize.png#center)
 
 # 2nd step: Extend physical drive partition and check free space with:
 
