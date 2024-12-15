@@ -1,13 +1,23 @@
 ---
-date: 2024-12-15T16:20:00Z
-description: 
-draft: false
 slug: obsidian-test
 title: Obsidian Test Post
+date: 
+description: ""
+draft: false
+comments: true
+disableShare: false
+searchHidden: false
+hideFooter: false
+ShowCodeCopyButtons: true
+ShowPostNavLinks: false
+showtoc: true
+tocopen: true
+UseHugoToc: false
+robotsNoIndex: false
 tags: 
-showToc: false
+  - ""
 ---
 
-## Here is Textt
+## Here is Text
 
 ![Image Description](/images/Pasted%20image%2020241215163254.png)
