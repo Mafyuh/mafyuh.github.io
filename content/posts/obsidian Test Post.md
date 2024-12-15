@@ -10,4 +10,4 @@ showToc = false
 
 ## Here is Text
 
-![[Pasted image 20241215155118.png]]
+!![Image Description](/images/Pasted%20image%2020241215162206.png)

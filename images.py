@@ -3,11 +3,11 @@ import re
 import shutil
 
 # Paths
-posts_dir = r"C:\Users\admin\Documents\Obsidian Vault\Mafyuh.com\posts"
-attachments_dir = r"C:\Users\admin\Documents\Obsidian Vault\attachments"
-static_images_dir = r"C:\Users\admin\Documents\Git Repos\mafyuh.github.io\static\images"
+posts_dir = r"C:\Users\admin\Documents\Git Repos\mafyuh.github.io\content\posts"  # Hugo content posts directory
+attachments_dir = r"C:\Users\admin\Documents\Obsidian Vault\attachments"         # Obsidian attachments directory
+static_images_dir = r"C:\Users\admin\Documents\Git Repos\mafyuh.github.io\static\images"  # Hugo static images directory
 
-# Step 1: Process each markdown file in the posts directory
+# Step 1: Process each markdown file in the Hugo posts directory (not Obsidian)
 for filename in os.listdir(posts_dir):
     if filename.endswith(".md"):
         filepath = os.path.join(posts_dir, filename)
@@ -24,12 +24,12 @@ for filename in os.listdir(posts_dir):
             markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
             content = content.replace(f"[[{image}]]", markdown_image)
             
-            # Step 4: Copy the image to the Hugo static/images directory if it exists
+            # Step 4: Copy the image to the Hugo static/images directory if it exists (Hugo only)
             image_source = os.path.join(attachments_dir, image)
             if os.path.exists(image_source):
                 shutil.copy(image_source, static_images_dir)
 
-        # Step 5: Write the updated content back to the markdown file
+        # Step 5: Write the updated content back to the Hugo markdown file
         with open(filepath, "w", encoding="utf-8") as file:
             file.write(content)
 
