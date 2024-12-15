@@ -77,6 +77,10 @@ params:
         url: about
       - name: Contact
         url: contact
+  editPost:
+    URL: "https://github.com/Mafyuh/mafyuh.github.io/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
   cover:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: false # hide on list pages and home
