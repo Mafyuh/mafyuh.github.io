@@ -211,4 +211,4 @@ Congrats you now have a fully automated backend for downloading media! Good time
 
 Now just hook up Jellyfin/Plex up to you /data/media directory and start watching with no ads!
 
-If you found this guide useful you can always [BuyMeACoffee](https://www.buymeacoffee.com/mafyuhh)!
+{{ template "_internal/disqus.html" . }}
