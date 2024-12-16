@@ -97,7 +97,13 @@ It's best practice to rename your files, Radarr does this automatically for you.
 ```
 {Movie CleanTitle} {(Release Year)} [imdbid-{ImdbId}] - {Edition Tags }{[Custom Formats]}{[Quality Full]}{[MediaInfo 3D]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}[{Mediainfo VideoCodec}]{-Release Group}
 ```
-Make sure you hit save. Note this only automatically renames the file if it was downloaded from Radarr, if you imported your own media you need to manually click rename files under **Movies** - Click Edit Movies - Select All - Rename Files on bottom of screen.
+Make sure you hit save. 
+
+```markdown
+> [!WARNING]
+> Note this only automatically renames the file if it was downloaded from Radarr, if you imported your own media you need to manually click rename files under **Movies** - Click Edit Movies - Select All - Rename Files on bottom of screen.
+```
+
 
 ### Custom Formats 
 Every single one of these custom formats is from trash-guides, you can see how to import them [here](https://trash-guides.info/Radarr/Radarr-import-custom-formats/).
