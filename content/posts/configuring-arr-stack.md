@@ -99,11 +99,7 @@ It's best practice to rename your files, Radarr does this automatically for you.
 ```
 Make sure you hit save. 
 
-```markdown
-> [!WARNING]
-> Note this only automatically renames the file if it was downloaded from Radarr, if you imported your own media you need to manually click rename files under **Movies** - Click Edit Movies - Select All - Rename Files on bottom of screen.
-```
-
+Note this only automatically renames the file if it was downloaded from Radarr, if you imported your own media you need to manually click rename files under **Movies** - Click Edit Movies - Select All - Rename Files on bottom of screen.
 
 ### Custom Formats 
 Every single one of these custom formats is from trash-guides, you can see how to import them [here](https://trash-guides.info/Radarr/Radarr-import-custom-formats/).
