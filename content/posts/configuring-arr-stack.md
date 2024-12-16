@@ -210,5 +210,3 @@ Now you just need to tell Bazarr where your arr's are located. Go to **Settings 
 Congrats you now have a fully automated backend for downloading media! Good time to cancel those 10 streaming subscriptions and start downloading what you wanna watch. There's not many guides out there about this sort of thing, as piracy leaves some ethical concerns. But idrc, I've been a pirate my whole life, the fact that you can make a system like this all for way cheaper than streaming services is mind-blowing to me.
 
 Now just hook up Jellyfin/Plex up to you /data/media directory and start watching with no ads!
-
-{{ template "_internal/disqus.html" . }}
