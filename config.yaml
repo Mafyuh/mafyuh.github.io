@@ -105,3 +105,6 @@ markup:
   highlight:
     noClasses: false
 
+services:
+  disqus:
+    shortname: disqus_Ri2gLwa20H
