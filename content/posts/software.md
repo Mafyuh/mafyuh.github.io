@@ -13,7 +13,7 @@ Just a straight forward list of pretty much everything that makes up my homelab.
 
 Operating Systems
 
-* Ubuntu 23.04
+* Ubuntu 24.04
 * Ubuntu 22.04 (primary on most systems)
 * CentOS/Fedora 38 (only when Ubuntu doesnt play nice)
 * Debian 11
