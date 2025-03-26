@@ -37,12 +37,8 @@ params:
   socialIcons:
     - name: reddit
       url: "https://reddit.com/user/Mafyuh"
-    - name: gitea
-      url: "https://git.mafyuh.dev"
     - name: github
       url: "https://github.com/Mafyuh"
-    - name: buymeacoffee
-      url: "https://www.buymeacoffee.com/mafyuhh"
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
