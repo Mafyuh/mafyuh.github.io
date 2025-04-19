@@ -52,8 +52,8 @@ params:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
     favicon: "/assets/favicon/favicon.ico"
-    favicon16x16: "/assets/favicon/favicon-16x16.png"
-    favicon32x32: "/assets/favicon/favicon-32x32.png"
+    favicon16x16: "/assets/favicon/favicon.ico"
+    favicon32x32: "/assets/favicon/favicon.ico"
     apple_touch_icon: "/assets/favicon/apple-touch-icon.png"
     # safari_pinned_tab: "<link / abs url>"
   label:
@@ -64,7 +64,7 @@ params:
     enabled: true # needs to be explicitly set
     title: Mafyuh
     subtitle: "Selfhoster - Jr. DevOps Engineer"
-    imageUrl: "/assets/favicon/favicon.svg"
+    imageUrl: "/assets/favicon/logo.svg"
     imageWidth: 120
     imageHeight: 120
     imageTitle: Mafyuh Logo
