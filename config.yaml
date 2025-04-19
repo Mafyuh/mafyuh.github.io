@@ -58,7 +58,7 @@ params:
     # safari_pinned_tab: "<link / abs url>"
   label:
     text: "Mafyuh's Blog"
-    icon: /assets/favicon/favicon.svg
+    icon: /assets/favicon/logo.svg
     iconHeight: 35
   profileMode:
     enabled: true # needs to be explicitly set
