@@ -35,8 +35,6 @@ params:
   tocopen: false
   social: true
   socialIcons:
-    - name: reddit
-      url: "https://reddit.com/user/Mafyuh"
     - name: github
       url: "https://github.com/Mafyuh"
   fuseOpts:
