@@ -11,8 +11,3 @@ Got questions, feedback, or just want to say hi? Feel free to reach out to me us
 - **Email:** admin[at]mafyuh[dot]com
 - [**Discord**](https://discordapp.com/users/395699338757537792) 
 
-## Resume
-
-If you're interested in my professional experience, you can download my resume below:
-
-- [Download Resume](/assets/img/resume.pdf)
